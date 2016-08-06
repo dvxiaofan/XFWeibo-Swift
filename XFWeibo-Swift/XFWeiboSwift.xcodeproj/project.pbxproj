@@ -24,6 +24,9 @@
 		BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */; };
 		BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */; };
 		BDD22B451D55B959007A86F8 /* XFDefineFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22B441D55B959007A86F8 /* XFDefineFile.swift */; };
+		BDEB25141D55C0490010FFEA /* XFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25131D55C0490010FFEA /* XFBaseViewController.swift */; };
+		BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */; };
+		BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDEB25171D55C4040010FFEA /* XFVisitorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XFDiscover.storyboard; sourceTree = "<group>"; };
 		BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		BDD22B441D55B959007A86F8 /* XFDefineFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFDefineFile.swift; sourceTree = "<group>"; };
+		BDEB25131D55C0490010FFEA /* XFBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFBaseViewController.swift; sourceTree = "<group>"; };
+		BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFVisitorView.swift; sourceTree = "<group>"; };
+		BDEB25171D55C4040010FFEA /* XFVisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFVisitorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 		BDB46A9E1D54994100BF8829 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BDEB25101D55C0050010FFEA /* Visitor (访客) */,
 				BDD22B3C1D55A033007A86F8 /* Main.storyboard */,
 				BDB46AA91D549DC800BF8829 /* XFMainViewController.swift */,
 			);
@@ -225,6 +232,16 @@
 				BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */,
 			);
 			path = Categary;
+			sourceTree = "<group>";
+		};
+		BDEB25101D55C0050010FFEA /* Visitor (访客) */ = {
+			isa = PBXGroup;
+			children = (
+				BDEB25131D55C0490010FFEA /* XFBaseViewController.swift */,
+				BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */,
+				BDEB25171D55C4040010FFEA /* XFVisitorView.xib */,
+			);
+			path = "Visitor (访客)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +352,7 @@
 				BDD1090D1D54D5D200D0FC2C /* Assets.xcassets in Resources */,
 				BDD22B391D559FF5007A86F8 /* XFNoUse.storyboard in Resources */,
 				BDD22B341D559F09007A86F8 /* XFMsg.storyboard in Resources */,
+				BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */,
 				BDD22B3D1D55A033007A86F8 /* Main.storyboard in Resources */,
 				BDD22B361D559F47007A86F8 /* XFProfile.storyboard in Resources */,
 				BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */,
@@ -364,11 +382,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB46AA41D549D7400BF8829 /* XFMsgViewController.swift in Sources */,
+				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
 				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
 				BDB46AA61D549D9100BF8829 /* XFDisViewController.swift in Sources */,
 				BDB46AAA1D549DC800BF8829 /* XFMainViewController.swift in Sources */,
 				BDB46A6E1D54933100BF8829 /* AppDelegate.swift in Sources */,
+				BDEB25141D55C0490010FFEA /* XFBaseViewController.swift in Sources */,
 				BDD22B451D55B959007A86F8 /* XFDefineFile.swift in Sources */,
 				BDB46AA21D549D6600BF8829 /* XFHomeViewController.swift in Sources */,
 			);
