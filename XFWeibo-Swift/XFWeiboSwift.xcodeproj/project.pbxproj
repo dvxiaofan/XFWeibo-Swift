@@ -23,6 +23,7 @@
 		BDD22B3D1D55A033007A86F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B3C1D55A033007A86F8 /* Main.storyboard */; };
 		BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */; };
 		BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */; };
+		BDD22B451D55B959007A86F8 /* XFDefineFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22B441D55B959007A86F8 /* XFDefineFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		BDD22B3C1D55A033007A86F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XFDiscover.storyboard; sourceTree = "<group>"; };
 		BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		BDD22B441D55B959007A86F8 /* XFDefineFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFDefineFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +117,9 @@
 		BDB46A6C1D54933100BF8829 /* XFWeibo-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				BDB46A6D1D54933100BF8829 /* AppDelegate.swift */,
 				BDB46A9B1D54994100BF8829 /* Classes */,
 				BDD22B371D559FF5007A86F8 /* Other */,
-				BDB46A6D1D54933100BF8829 /* AppDelegate.swift */,
 			);
 			path = "XFWeibo-Swift";
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 		BDD22B401D55A70E007A86F8 /* Tools (工具) */ = {
 			isa = PBXGroup;
 			children = (
+				BDD22B441D55B959007A86F8 /* XFDefineFile.swift */,
 				BDD22B411D55A730007A86F8 /* Categary */,
 			);
 			path = "Tools (工具)";
@@ -366,6 +369,7 @@
 				BDB46AA61D549D9100BF8829 /* XFDisViewController.swift in Sources */,
 				BDB46AAA1D549DC800BF8829 /* XFMainViewController.swift in Sources */,
 				BDB46A6E1D54933100BF8829 /* AppDelegate.swift in Sources */,
+				BDD22B451D55B959007A86F8 /* XFDefineFile.swift in Sources */,
 				BDB46AA21D549D6600BF8829 /* XFHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +495,8 @@
 				INFOPLIST_FILE = "XFWeibo-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dvxiaofan.XFWeibo-Swift";
 				PRODUCT_NAME = XFWeiboSwift;
 			};

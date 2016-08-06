@@ -35,9 +35,18 @@ extension XFMainViewController {
         tabBar.addSubview(composeBtn)
         
         composeBtn.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
+        
+        composeBtn.addTarget(self, action: "composeBtnClick", forControlEvents: .TouchUpInside)
     }
 }
 
+// MARK: - 事件监听
+extension XFMainViewController {
+    @objc private func composeBtnClick() {
+        
+        XFLog("点击发布微博按钮")
+    }
+}
 
 
 
