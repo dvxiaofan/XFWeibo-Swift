@@ -25,19 +25,43 @@ class XFBaseViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavItem()
     }
 
 
 }
 
+// MARK: - 设置界面
 extension XFBaseViewController {
     /// 设置访客视图
     private func setupVistorView() {
         view = visitorView
+        
+        // 注册访客界面注册和登录按钮的监听
+        visitorView.registerBtn.addTarget(self, action: "registerBtnClick", forControlEvents: .TouchUpInside)
+        visitorView.loginBtn.addTarget(self, action: "loginBtnClick", forControlEvents: .TouchUpInside)
     }
+    
+    /// 设置导航栏左右按钮
+    private func setupNavItem() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .Plain, target: self, action: "registerBtnClick");
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .Plain, target: self, action: "loginBtnClick")
+    }
+    
 }
 
-
+// MARK:- 事件监听
+extension XFBaseViewController {
+    /// 注册按钮
+    @objc private func registerBtnClick() {
+        XFLog("register")
+    }
+    
+    /// 登录按钮
+    @objc private func loginBtnClick() {
+        XFLog("login")
+    }
+}
 
 
 

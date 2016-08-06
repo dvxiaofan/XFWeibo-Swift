@@ -81,6 +81,8 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>
                 <outlet property="iconView" destination="rdr-jT-RvX" id="uZe-du-kZU"/>
+                <outlet property="loginBtn" destination="eul-sC-YoK" id="VR1-bZ-qNp"/>
+                <outlet property="registerBtn" destination="wGG-YO-U8S" id="wCf-ta-MFp"/>
                 <outlet property="rotationView" destination="OXf-Bt-xZM" id="WJU-bW-aX9"/>
                 <outlet property="tipLabel" destination="tvk-U0-SWX" id="1pJ-GP-5FO"/>
             </connections>

@@ -20,6 +20,8 @@ class XFVisitorView: UIView {
     @IBOutlet weak var rotationView: UIImageView!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
     
     // MARK:- 自定义函数
     func setupVisitorViewInfo(iconName : String, title : String) {
