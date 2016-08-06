@@ -18,7 +18,10 @@
 		BDB46AAA1D549DC800BF8829 /* XFMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46AA91D549DC800BF8829 /* XFMainViewController.swift */; };
 		BDD1090D1D54D5D200D0FC2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDD1090C1D54D5D200D0FC2C /* Assets.xcassets */; };
 		BDD22AE91D557DF8007A86F8 /* XFDefineFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22AE81D557DF8007A86F8 /* XFDefineFile.swift */; };
-		BDD22AEB1D558763007A86F8 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = BDD22AEA1D558763007A86F8 /* MainVCSettings.json */; };
+		BDD22B281D559A89007A86F8 /* XFHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B261D559A89007A86F8 /* XFHome.storyboard */; };
+		BDD22B2A1D559ACA007A86F8 /* XFMsg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B291D559ACA007A86F8 /* XFMsg.storyboard */; };
+		BDD22B2D1D559AE6007A86F8 /* XFDiscover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B2B1D559AE6007A86F8 /* XFDiscover.storyboard */; };
+		BDD22B2F1D559AFE007A86F8 /* XFProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B2E1D559AFE007A86F8 /* XFProfile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +59,10 @@
 		BDB46AA91D549DC800BF8829 /* XFMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFMainViewController.swift; sourceTree = "<group>"; };
 		BDD1090C1D54D5D200D0FC2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDD22AE81D557DF8007A86F8 /* XFDefineFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFDefineFile.swift; sourceTree = "<group>"; };
-		BDD22AEA1D558763007A86F8 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		BDD22B271D559A89007A86F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/XFHome.storyboard; sourceTree = "<group>"; };
+		BDD22B291D559ACA007A86F8 /* XFMsg.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = XFMsg.storyboard; path = ../../XFMsg.storyboard; sourceTree = "<group>"; };
+		BDD22B2C1D559AE6007A86F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/XFDiscover.storyboard; sourceTree = "<group>"; };
+		BDD22B2E1D559AFE007A86F8 /* XFProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = XFProfile.storyboard; path = ../../XFProfile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +115,6 @@
 			children = (
 				BDB46A9B1D54994100BF8829 /* Classes */,
 				BDB46A6D1D54933100BF8829 /* AppDelegate.swift */,
-				BDD22AEA1D558763007A86F8 /* MainVCSettings.json */,
 				BDD22AE81D557DF8007A86F8 /* XFDefineFile.swift */,
 				BDD1090C1D54D5D200D0FC2C /* Assets.xcassets */,
 				BDB46A711D54933100BF8829 /* Main.storyboard */,
@@ -151,6 +156,7 @@
 		BDB46A9C1D54994100BF8829 /* Discover (发现) */ = {
 			isa = PBXGroup;
 			children = (
+				BDD22B2B1D559AE6007A86F8 /* XFDiscover.storyboard */,
 				BDB46AA51D549D9100BF8829 /* XFDisViewController.swift */,
 			);
 			path = "Discover (发现)";
@@ -159,6 +165,7 @@
 		BDB46A9D1D54994100BF8829 /* Home (首页) */ = {
 			isa = PBXGroup;
 			children = (
+				BDD22B261D559A89007A86F8 /* XFHome.storyboard */,
 				BDB46AA11D549D6600BF8829 /* XFHomeViewController.swift */,
 			);
 			path = "Home (首页)";
@@ -175,6 +182,7 @@
 		BDB46A9F1D54994100BF8829 /* Message (消息) */ = {
 			isa = PBXGroup;
 			children = (
+				BDD22B291D559ACA007A86F8 /* XFMsg.storyboard */,
 				BDB46AA31D549D7400BF8829 /* XFMsgViewController.swift */,
 			);
 			path = "Message (消息)";
@@ -183,6 +191,7 @@
 		BDB46AA01D54994100BF8829 /* Profile (我) */ = {
 			isa = PBXGroup;
 			children = (
+				BDD22B2E1D559AFE007A86F8 /* XFProfile.storyboard */,
 				BDB46AA71D549D9C00BF8829 /* XFProfileViewController.swift */,
 			);
 			path = "Profile (我)";
@@ -293,9 +302,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD22B2A1D559ACA007A86F8 /* XFMsg.storyboard in Resources */,
 				BDD1090D1D54D5D200D0FC2C /* Assets.xcassets in Resources */,
+				BDD22B2D1D559AE6007A86F8 /* XFDiscover.storyboard in Resources */,
+				BDD22B281D559A89007A86F8 /* XFHome.storyboard in Resources */,
+				BDD22B2F1D559AFE007A86F8 /* XFProfile.storyboard in Resources */,
 				BDB46A731D54933100BF8829 /* Main.storyboard in Resources */,
-				BDD22AEB1D558763007A86F8 /* MainVCSettings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +380,24 @@
 				BDB46A721D54933100BF8829 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BDD22B261D559A89007A86F8 /* XFHome.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDD22B271D559A89007A86F8 /* Base */,
+			);
+			name = XFHome.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BDD22B2B1D559AE6007A86F8 /* XFDiscover.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDD22B2C1D559AE6007A86F8 /* Base */,
+			);
+			name = XFDiscover.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
