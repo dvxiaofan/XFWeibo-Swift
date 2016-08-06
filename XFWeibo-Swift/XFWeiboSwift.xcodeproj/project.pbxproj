@@ -22,6 +22,7 @@
 		BDD22B3B1D55A027007A86F8 /* XFHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B3A1D55A027007A86F8 /* XFHome.storyboard */; };
 		BDD22B3D1D55A033007A86F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B3C1D55A033007A86F8 /* Main.storyboard */; };
 		BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */; };
+		BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		BDD22B3A1D55A027007A86F8 /* XFHome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XFHome.storyboard; sourceTree = "<group>"; };
 		BDD22B3C1D55A033007A86F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XFDiscover.storyboard; sourceTree = "<group>"; };
+		BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				BDB46A9F1D54994100BF8829 /* Message (消息) */,
 				BDB46A9C1D54994100BF8829 /* Discover (发现) */,
 				BDB46AA01D54994100BF8829 /* Profile (我) */,
+				BDD22B401D55A70E007A86F8 /* Tools (工具) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -203,6 +206,22 @@
 				BDB46A791D54933100BF8829 /* Info.plist */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		BDD22B401D55A70E007A86F8 /* Tools (工具) */ = {
+			isa = PBXGroup;
+			children = (
+				BDD22B411D55A730007A86F8 /* Categary */,
+			);
+			path = "Tools (工具)";
+			sourceTree = "<group>";
+		};
+		BDD22B411D55A730007A86F8 /* Categary */ = {
+			isa = PBXGroup;
+			children = (
+				BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */,
+			);
+			path = Categary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB46AA41D549D7400BF8829 /* XFMsgViewController.swift in Sources */,
+				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
 				BDB46AA61D549D9100BF8829 /* XFDisViewController.swift in Sources */,
 				BDB46AAA1D549DC800BF8829 /* XFMainViewController.swift in Sources */,
