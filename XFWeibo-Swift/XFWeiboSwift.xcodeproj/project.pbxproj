@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */; };
 		BDB46A6E1D54933100BF8829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46A6D1D54933100BF8829 /* AppDelegate.swift */; };
 		BDB46A831D54933100BF8829 /* XFWeibo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46A821D54933100BF8829 /* XFWeibo_SwiftTests.swift */; };
 		BDB46A8E1D54933100BF8829 /* XFWeibo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46A8D1D54933100BF8829 /* XFWeibo_SwiftUITests.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFTitleButton.swift; sourceTree = "<group>"; };
 		BDB46A6A1D54933100BF8829 /* XFWeiboSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFWeiboSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB46A6D1D54933100BF8829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDB46A791D54933100BF8829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -222,8 +224,9 @@
 		BDD22B401D55A70E007A86F8 /* Tools (工具) */ = {
 			isa = PBXGroup;
 			children = (
-				BDD22B441D55B959007A86F8 /* XFDefineFile.swift */,
 				BDD22B411D55A730007A86F8 /* Categary */,
+				BDD22B441D55B959007A86F8 /* XFDefineFile.swift */,
+				BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */,
 			);
 			path = "Tools (工具)";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			files = (
 				BDB46AA41D549D7400BF8829 /* XFMsgViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
+				BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */,
 				BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */,
 				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,

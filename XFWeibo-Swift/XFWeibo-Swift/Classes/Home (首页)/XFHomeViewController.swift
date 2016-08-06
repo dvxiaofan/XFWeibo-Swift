@@ -9,7 +9,11 @@
 import UIKit
 
 class XFHomeViewController: XFBaseViewController {
-
+    
+    // MARK:- 懒加载
+    private lazy var titleBtn : XFTitleButton = XFTitleButton()
+    
+    // MARK:- 系统回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +40,10 @@ extension XFHomeViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         
         // titleview
+        titleBtn.setTitle("张小烦", forState: .Normal)
+        titleBtn.addTarget(self, action: "titleBtnClick:", forControlEvents: .TouchUpInside)
+        
+        navigationItem.titleView = titleBtn
     }
     
     
@@ -48,7 +56,12 @@ extension XFHomeViewController {
     // MARK:- 右按钮点击
     
     // MARK:- titleView 点击
-    
+    @objc private func titleBtnClick(titleBtn : XFTitleButton) {
+        
+        titleBtn.selected = !titleBtn.selected
+        
+        
+    }
     
 }
 
