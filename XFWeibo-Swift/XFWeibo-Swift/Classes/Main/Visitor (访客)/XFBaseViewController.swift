@@ -14,7 +14,7 @@ class XFBaseViewController: UITableViewController {
     lazy var visitorView : XFVisitorView = XFVisitorView.vistitorView()
     
     // MARK:- 定义变量
-    var isLogin : Bool = false
+    var isLogin : Bool = true
 
     // MARK:- 系统回调方法
     

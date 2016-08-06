@@ -27,6 +27,7 @@
 		BDEB25141D55C0490010FFEA /* XFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25131D55C0490010FFEA /* XFBaseViewController.swift */; };
 		BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */; };
 		BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDEB25171D55C4040010FFEA /* XFVisitorView.xib */; };
+		BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25191D55E4C90010FFEA /* UIBarButtonItem-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		BDEB25131D55C0490010FFEA /* XFBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFBaseViewController.swift; sourceTree = "<group>"; };
 		BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFVisitorView.swift; sourceTree = "<group>"; };
 		BDEB25171D55C4040010FFEA /* XFVisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFVisitorView.xib; sourceTree = "<group>"; };
+		BDEB25191D55E4C90010FFEA /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */,
+				BDEB25191D55E4C90010FFEA /* UIBarButtonItem-Extension.swift */,
 			);
 			path = Categary;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			files = (
 				BDB46AA41D549D7400BF8829 /* XFMsgViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
+				BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */,
 				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
 				BDB46AA61D549D9100BF8829 /* XFDisViewController.swift in Sources */,

@@ -11,28 +11,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="OXf-Bt-xZM" userLabel="转盘">
-                    <rect key="frame" x="100" y="146" width="175" height="175"/>
+                    <rect key="frame" x="100" y="176" width="175" height="175"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="175" id="gxr-Fd-nTp"/>
                         <constraint firstAttribute="width" constant="175" id="kBv-Gh-wJX"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_mask_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="2Gh-cV-gMR" userLabel="遮挡背景">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
+                    <rect key="frame" x="0.0" y="176" width="375" height="175"/>
                     <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="420" id="HwI-Fw-EhZ"/>
+                        <constraint firstAttribute="height" constant="175" id="qJz-jS-nGm"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="HwI-Fw-EhZ"/>
+                        </mask>
+                    </variation>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="rdr-jT-RvX" userLabel="图标">
-                    <rect key="frame" x="140" y="219" width="94" height="90"/>
+                    <rect key="frame" x="140" y="229" width="94" height="90"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="94" id="Arx-gv-Gbf"/>
                         <constraint firstAttribute="height" constant="90" id="jss-9V-iE5"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人, 回到这里看看有什么惊喜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvk-U0-SWX" userLabel="提示语">
-                    <rect key="frame" x="62" y="371" width="250" height="17"/>
+                    <rect key="frame" x="62" y="401" width="250" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="aYt-AG-bbx"/>
                     </constraints>
@@ -41,7 +47,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGG-YO-U8S">
-                    <rect key="frame" x="62" y="432" width="90" height="35"/>
+                    <rect key="frame" x="62" y="441" width="90" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="AyV-7O-sFG"/>
                         <constraint firstAttribute="width" constant="90" id="RVQ-92-kcf"/>
@@ -52,7 +58,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eul-sC-YoK">
-                    <rect key="frame" x="222" y="432" width="90" height="35"/>
+                    <rect key="frame" x="222" y="441" width="90" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="EZg-Wm-Ues"/>
                         <constraint firstAttribute="width" constant="90" id="Gbu-iW-EeE"/>
@@ -64,18 +70,18 @@
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="2Gh-cV-gMR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9RU-vl-MVf"/>
                 <constraint firstItem="2Gh-cV-gMR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DFn-gQ-xRB"/>
                 <constraint firstItem="OXf-Bt-xZM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="K6M-I1-Nx3"/>
                 <constraint firstAttribute="trailing" secondItem="2Gh-cV-gMR" secondAttribute="trailing" id="Ksx-cG-gDB"/>
                 <constraint firstItem="wGG-YO-U8S" firstAttribute="leading" secondItem="tvk-U0-SWX" secondAttribute="leading" id="QkX-6r-pNo"/>
                 <constraint firstItem="rdr-jT-RvX" firstAttribute="centerX" secondItem="OXf-Bt-xZM" secondAttribute="centerX" id="Rrv-EW-Xvu"/>
-                <constraint firstItem="OXf-Bt-xZM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-100" id="T37-0h-2pA"/>
-                <constraint firstItem="wGG-YO-U8S" firstAttribute="top" secondItem="OXf-Bt-xZM" secondAttribute="bottom" constant="111" id="VzX-hY-tWq"/>
+                <constraint firstItem="OXf-Bt-xZM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-70" id="T37-0h-2pA"/>
+                <constraint firstItem="wGG-YO-U8S" firstAttribute="top" secondItem="OXf-Bt-xZM" secondAttribute="bottom" constant="90" id="VzX-hY-tWq"/>
+                <constraint firstItem="2Gh-cV-gMR" firstAttribute="top" secondItem="OXf-Bt-xZM" secondAttribute="top" id="Wqz-db-uUh"/>
                 <constraint firstItem="tvk-U0-SWX" firstAttribute="centerX" secondItem="OXf-Bt-xZM" secondAttribute="centerX" id="Z3g-ho-C39"/>
-                <constraint firstItem="rdr-jT-RvX" firstAttribute="centerY" secondItem="OXf-Bt-xZM" secondAttribute="centerY" constant="30" id="fSo-Yq-rbg"/>
+                <constraint firstItem="rdr-jT-RvX" firstAttribute="centerY" secondItem="OXf-Bt-xZM" secondAttribute="centerY" constant="10" id="fSo-Yq-rbg"/>
                 <constraint firstItem="tvk-U0-SWX" firstAttribute="top" secondItem="OXf-Bt-xZM" secondAttribute="bottom" constant="50" id="llz-yf-INI"/>
-                <constraint firstItem="eul-sC-YoK" firstAttribute="top" secondItem="OXf-Bt-xZM" secondAttribute="bottom" constant="111" id="sqG-cA-E93"/>
+                <constraint firstItem="eul-sC-YoK" firstAttribute="top" secondItem="OXf-Bt-xZM" secondAttribute="bottom" constant="90" id="sqG-cA-E93"/>
                 <constraint firstItem="eul-sC-YoK" firstAttribute="trailing" secondItem="tvk-U0-SWX" secondAttribute="trailing" id="z2e-F4-eIX"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
