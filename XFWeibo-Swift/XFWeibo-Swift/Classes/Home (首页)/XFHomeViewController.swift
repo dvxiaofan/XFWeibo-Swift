@@ -16,7 +16,7 @@ class XFHomeViewController: XFBaseViewController {
     // MARK:- 系统回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.blueColor()
         // 没有登录时需要设置的内容,增加动画
         visitorView.addRotationAnim()
         if !isLogin {
@@ -60,12 +60,28 @@ extension XFHomeViewController {
         
         titleBtn.selected = !titleBtn.selected
         
+        // 创建弹出的控制器
+        let popVc = XFPopViewController()
         
+        // 保证弹出时下面的界面不会被移除
+        popVc.modalPresentationStyle = .Custom
+        
+        // 设置专场代理
+        popVc.transitioningDelegate = self
+        
+        // 弹出控制器
+        presentViewController(popVc, animated: true, completion: nil)
     }
     
 }
 
-
+// MARK: - 转场动画代理
+extension XFHomeViewController: UIViewControllerTransitioningDelegate {
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return XFPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+    
+}
 
 
 

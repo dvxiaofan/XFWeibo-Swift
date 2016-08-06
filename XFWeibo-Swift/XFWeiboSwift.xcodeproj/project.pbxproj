@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */; };
+		BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */; };
+		BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */; };
+		BD7F74B61D56242000F6EC9D /* XFPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B51D56242000F6EC9D /* XFPresentationController.swift */; };
 		BDB46A6E1D54933100BF8829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46A6D1D54933100BF8829 /* AppDelegate.swift */; };
 		BDB46A831D54933100BF8829 /* XFWeibo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46A821D54933100BF8829 /* XFWeibo_SwiftTests.swift */; };
 		BDB46A8E1D54933100BF8829 /* XFWeibo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46A8D1D54933100BF8829 /* XFWeibo_SwiftUITests.swift */; };
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFTitleButton.swift; sourceTree = "<group>"; };
+		BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopViewController.swift; sourceTree = "<group>"; };
+		BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPopViewController.xib; sourceTree = "<group>"; };
+		BD7F74B51D56242000F6EC9D /* XFPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPresentationController.swift; sourceTree = "<group>"; };
 		BDB46A6A1D54933100BF8829 /* XFWeiboSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFWeiboSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB46A6D1D54933100BF8829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDB46A791D54933100BF8829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -104,6 +110,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD7F74B01D561BC500F6EC9D /* UIPopover */ = {
+			isa = PBXGroup;
+			children = (
+				BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */,
+				BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */,
+				BD7F74B51D56242000F6EC9D /* XFPresentationController.swift */,
+			);
+			path = UIPopover;
+			sourceTree = "<group>";
+		};
 		BDB46A611D54933100BF8829 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +193,7 @@
 		BDB46A9D1D54994100BF8829 /* Home (首页) */ = {
 			isa = PBXGroup;
 			children = (
+				BD7F74B01D561BC500F6EC9D /* UIPopover */,
 				BDD22B3A1D55A027007A86F8 /* XFHome.storyboard */,
 				BDB46AA11D549D6600BF8829 /* XFHomeViewController.swift */,
 			);
@@ -356,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDD1090D1D54D5D200D0FC2C /* Assets.xcassets in Resources */,
+				BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */,
 				BDD22B391D559FF5007A86F8 /* XFNoUse.storyboard in Resources */,
 				BDD22B341D559F09007A86F8 /* XFMsg.storyboard in Resources */,
 				BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */,
@@ -388,7 +406,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB46AA41D549D7400BF8829 /* XFMsgViewController.swift in Sources */,
+				BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
+				BD7F74B61D56242000F6EC9D /* XFPresentationController.swift in Sources */,
 				BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */,
 				BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */,
 				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
