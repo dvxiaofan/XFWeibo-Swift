@@ -21,6 +21,7 @@ class XFNetWorkTools: AFHTTPSessionManager {
     static let shareInstance : XFNetWorkTools = {
         let tools = XFNetWorkTools()
         tools.responseSerializer.acceptableContentTypes?.insert("text/html")
+        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
         
         return tools
     } ()
@@ -29,7 +30,7 @@ class XFNetWorkTools: AFHTTPSessionManager {
 
 // MARK:- 封装请求方法
 extension XFNetWorkTools {
-    func request(methodType methodType : requestType, urlString : String, parameters : [String : AnyObject], finished : (result : AnyObject?, error : NSError?) -> ()) {
+    func requestData(methodType methodType : requestType, urlString : String, parameters : [String : AnyObject], finished : (result : AnyObject?, error : NSError?) -> ()) {
         
         // 1.定义成功的回调闭包
         let successCallBack = { (task : NSURLSessionDataTask, result : AnyObject?) -> Void in
@@ -50,7 +51,23 @@ extension XFNetWorkTools {
     }
 }
 
-
+// MARK:- 请求 AccessToken 
+extension XFNetWorkTools {
+    func loadAccessToken(code : String, finished : (result : [String : AnyObject]?, error : NSError?) -> ()) {
+        // url
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        
+        // 参数
+        let parameters = ["client_id" : app_Key, "client_secret" : app_Secret, "grant_type" :
+            "authorization_code", "redirect_uri" : redirect_uri, "code" : code]
+        
+        // 发送请求
+        requestData(methodType: .POST, urlString: urlString, parameters: parameters) { (result, error) -> () in
+            finished(result: result as? [String : AnyObject], error: error)
+        }
+        
+    }
+}
 
 
 

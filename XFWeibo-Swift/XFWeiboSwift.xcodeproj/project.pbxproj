@@ -10,6 +10,9 @@
 		08CC3604764C69CDD92D8046 /* Pods_XFWeiboSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F797CC8C2BE15889243BFC7 /* Pods_XFWeiboSwiftTests.framework */; };
 		BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */; };
 		BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */; };
+		BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */; };
+		BD3E34491D5AFD110088B23F /* XFOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD3E34471D5AFD110088B23F /* XFOAuthViewController.xib */; };
+		BD3E344B1D5B01A40088B23F /* XFCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E344A1D5B01A40088B23F /* XFCommon.swift */; };
 		BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */; };
 		BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */; };
 		BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */; };
@@ -68,6 +71,9 @@
 		B4A97F133EE8F23344764490 /* Pods-XFWeiboSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwiftTests/Pods-XFWeiboSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopAnimator.swift; sourceTree = "<group>"; };
 		BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFNetWorkTools.swift; sourceTree = "<group>"; };
+		BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFOAuthViewController.swift; sourceTree = "<group>"; };
+		BD3E34471D5AFD110088B23F /* XFOAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFOAuthViewController.xib; sourceTree = "<group>"; };
+		BD3E344A1D5B01A40088B23F /* XFCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCommon.swift; sourceTree = "<group>"; };
 		BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFTitleButton.swift; sourceTree = "<group>"; };
 		BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopViewController.swift; sourceTree = "<group>"; };
 		BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPopViewController.xib; sourceTree = "<group>"; };
@@ -150,6 +156,15 @@
 				94D2B1EDD20F59968A64F0D8 /* Pods-XFWeiboSwiftUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD3E34451D5AFCEA0088B23F /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+				BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */,
+				BD3E34471D5AFD110088B23F /* XFOAuthViewController.xib */,
+			);
+			path = "OAuth(授权)";
 			sourceTree = "<group>";
 		};
 		BD7F74B01D561BC500F6EC9D /* UIPopover */ = {
@@ -248,6 +263,7 @@
 		BDB46A9E1D54994100BF8829 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BD3E34451D5AFCEA0088B23F /* OAuth(授权) */,
 				BDEB25101D55C0050010FFEA /* Visitor (访客) */,
 				BDD22B3C1D55A033007A86F8 /* Main.storyboard */,
 				BDB46AA91D549DC800BF8829 /* XFMainViewController.swift */,
@@ -290,6 +306,7 @@
 				BDD22B441D55B959007A86F8 /* XFDefineFile.swift */,
 				BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */,
 				BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */,
+				BD3E344A1D5B01A40088B23F /* XFCommon.swift */,
 			);
 			path = "Tools (工具)";
 			sourceTree = "<group>";
@@ -427,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3E34491D5AFD110088B23F /* XFOAuthViewController.xib in Resources */,
 				BDD1090D1D54D5D200D0FC2C /* Assets.xcassets in Resources */,
 				BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */,
 				BDD22B391D559FF5007A86F8 /* XFNoUse.storyboard in Resources */,
@@ -599,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB46AA41D549D7400BF8829 /* XFMsgViewController.swift in Sources */,
+				BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */,
 				BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
 				BD7F74B61D56242000F6EC9D /* XFPresentationController.swift in Sources */,
@@ -607,6 +626,7 @@
 				BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */,
 				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
 				BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */,
+				BD3E344B1D5B01A40088B23F /* XFCommon.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
 				BDB46AA61D549D9100BF8829 /* XFDisViewController.swift in Sources */,
 				BDB46AAA1D549DC800BF8829 /* XFMainViewController.swift in Sources */,

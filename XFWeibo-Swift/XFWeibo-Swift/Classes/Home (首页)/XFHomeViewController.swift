@@ -22,7 +22,7 @@ class XFHomeViewController: XFBaseViewController {
     // MARK:- 系统回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.blueColor()
+        
         // 没有登录时需要设置的内容,增加动画
         visitorView.addRotationAnim()
         if !isLogin {

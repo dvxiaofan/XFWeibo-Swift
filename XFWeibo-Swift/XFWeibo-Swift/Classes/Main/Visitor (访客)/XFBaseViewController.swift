@@ -14,7 +14,7 @@ class XFBaseViewController: UITableViewController {
     lazy var visitorView : XFVisitorView = XFVisitorView.vistitorView()
     
     // MARK:- 定义变量
-    var isLogin : Bool = true
+    var isLogin : Bool = false
 
     // MARK:- 系统回调方法
     
@@ -59,7 +59,11 @@ extension XFBaseViewController {
     
     /// 登录按钮
     @objc private func loginBtnClick() {
-        XFLog("login")
+        let oauthVc = XFOAuthViewController()
+        
+        let oauthNav = UINavigationController(rootViewController: oauthVc)
+        
+        presentViewController(oauthNav, animated: true, completion: nil)
     }
 }
 
