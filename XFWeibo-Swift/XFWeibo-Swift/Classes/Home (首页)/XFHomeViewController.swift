@@ -13,6 +13,8 @@ class XFHomeViewController: XFBaseViewController {
     // MARK:- 懒加载
     private lazy var titleBtn : XFTitleButton = XFTitleButton()
     
+    private lazy var popAnimator : XFPopAnimator = XFPopAnimator()
+    
     // MARK:- 系统回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +69,7 @@ extension XFHomeViewController {
         popVc.modalPresentationStyle = .Custom
         
         // 设置专场代理
-        popVc.transitioningDelegate = self
+        popVc.transitioningDelegate = popAnimator
         
         // 弹出控制器
         presentViewController(popVc, animated: true, completion: nil)
@@ -75,13 +77,10 @@ extension XFHomeViewController {
     
 }
 
-// MARK: - 转场动画代理
-extension XFHomeViewController: UIViewControllerTransitioningDelegate {
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return XFPresentationController(presentedViewController: presented, presentingViewController: presenting)
-    }
-    
-}
+
+
+
+
 
 
 
