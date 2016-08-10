@@ -10,26 +10,49 @@
 import UIKit
 
 class XFPopAnimator: NSObject {
-    // MARK:- 属性
+    // MARK:- 对外属性
     var isPresented : Bool = false
+    var presentedFrame : CGRect = CGRectZero
+    
+    // 闭包回调属性 可选类型
+    var callBack : ((isPresented : Bool) -> ())?
+    
+    // MARK:- 自定义构造函数
+    // 先重写父类, 保留原有构造函数
+    override init() {}
+    
+    init(callBack : (presented : Bool) -> ()) {
+        self.callBack = callBack
+    }
 }
 
 // MARK: - 自定义转场动画
 extension XFPopAnimator: UIViewControllerTransitioningDelegate {
     // 改变弹出 view 的尺寸
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return XFPresentationController(presentedViewController: presented, presentingViewController: presenting)
+        
+        let presentation = XFPresentationController(presentedViewController: presented, presentingViewController: presenting)
+        // 设置 frame
+        presentation.presentedFrame = presentedFrame
+        
+        return presentation
     }
     
     // 自定义弹出动画
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresented = true
+        
+        callBack!(isPresented : isPresented)
+        
         return self
     }
     
     // 自定义消失动画
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresented = false
+        
+        callBack!(isPresented : isPresented)
+        
         return self
     }
 }

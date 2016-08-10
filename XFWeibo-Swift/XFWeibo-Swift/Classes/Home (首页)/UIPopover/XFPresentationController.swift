@@ -11,6 +11,9 @@ import UIKit
 
 class XFPresentationController: UIPresentationController {
     
+    // MARK:- 对外属性
+    var presentedFrame : CGRect = CGRectZero
+    
     // MARK:- 懒加载
     private lazy var coverView : UIView = UIView()
     
@@ -19,10 +22,7 @@ class XFPresentationController: UIPresentationController {
         super.containerViewWillLayoutSubviews()
         
         // 设置弹出视图的尺寸
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
-        let width = screenWidth * 0.6
-        let viewX = (screenWidth - width) * 0.5
-        presentedView()?.frame = CGRect(x: viewX, y: 55, width: width, height: 300)
+        presentedView()?.frame = presentedFrame
         
         // 设置弹出后的蒙版
         setupCoverView()

@@ -10,10 +10,14 @@ import UIKit
 
 class XFHomeViewController: XFBaseViewController {
     
+    
     // MARK:- 懒加载
     private lazy var titleBtn : XFTitleButton = XFTitleButton()
     
-    private lazy var popAnimator : XFPopAnimator = XFPopAnimator()
+    private lazy var popAnimator : XFPopAnimator = XFPopAnimator {[weak self] (presented) -> () in
+        
+        self?.titleBtn.selected = presented
+    }
     
     // MARK:- 系统回调方法
     override func viewDidLoad() {
@@ -60,18 +64,20 @@ extension XFHomeViewController {
     // MARK:- titleView 点击
     @objc private func titleBtnClick(titleBtn : XFTitleButton) {
         
-        titleBtn.selected = !titleBtn.selected
-        
-        // 创建弹出的控制器
+        // 1.创建弹出的控制器
         let popVc = XFPopViewController()
         
-        // 保证弹出时下面的界面不会被移除
+        // 2.保证弹出时下面的界面不会被移除
         popVc.modalPresentationStyle = .Custom
         
-        // 设置专场代理
+        // 3.设置专场代理
         popVc.transitioningDelegate = popAnimator
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        let width = screenWidth * 0.6
+        let viewX = (screenWidth - width) * 0.5
+        popAnimator.presentedFrame = CGRect(x: viewX, y: 55, width: width, height: 300)
         
-        // 弹出控制器
+        // 4.弹出控制器
         presentViewController(popVc, animated: true, completion: nil)
     }
     
