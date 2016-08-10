@@ -70,8 +70,7 @@ extension XFOAuthViewController {
 
 // MARK:- webView 代理
 extension XFOAuthViewController : UIWebViewDelegate{
-    
-    
+
     // 开始加载
     func webViewDidStartLoad(webView: UIWebView) {
         // 显示加载提示
@@ -130,11 +129,52 @@ extension XFOAuthViewController {
             }
             
             // 拿到结果
-            XFLog(result)
+            guard let accountDict = result else {
+                XFLog("没有获取到授权后的数据")
+                return
+            }
+            
+            // 将字典专程模型对象
+            let user = XFUser(dict: accountDict)
+            
+            // 请求用户数据
+            self.loadUserInfo(user)
+        }
+    }
+    
+    /// 请求用户数据
+    private func loadUserInfo(user : XFUser) {
+        // 获取 accesstoken
+        guard let accessToken = user.access_token else {
+            return
+        }
+        
+        guard let uid = user.uid else {
+            return
+        }
+        
+        XFNetWorkTools.shareInstance.loadUserInfo(accessToken, uid: uid) { (result, error) -> () in
+            if error != nil {
+                
+                XFLog(error)
+                return
+            }
+            
+            // 拿到用户数据
+            guard let userInfoDict = result else {
+                return
+            }
+            
+            // 从字典中取出昵称和头像
+            user.screen_name = userInfoDict["screen_name"] as? String
+            user.avatar_large = userInfoDict["avatar_large"] as? String
+            
             
         }
     }
+    
 }
+
 
 
 
