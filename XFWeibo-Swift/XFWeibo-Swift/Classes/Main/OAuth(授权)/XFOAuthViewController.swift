@@ -170,13 +170,15 @@ extension XFOAuthViewController {
             account.avatar_large = userInfoDict["avatar_large"] as? String
             
             // 保存用户数据
-            // 获得沙盒路径
-            var accountPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-            accountPath = (accountPath as NSString).stringByAppendingPathComponent("user.plist")
-            XFLog(accountPath)
+            NSKeyedArchiver.archiveRootObject(account, toFile: XFUserAccountTool.shareInstance.accountPath)
             
-            // 保存对象
-            NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
+            // 将 account 对象设置到单例对象中
+            XFUserAccountTool.shareInstance.account = account
+            
+            // 退出当前控制器 显示欢迎界面
+            self.dismissViewControllerAnimated(false, completion: { () -> Void in
+                UIApplication.sharedApplication().keyWindow?.rootViewController = XFWelcomeViewController()
+            })
             
             
             

@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK:- 授权类常量
 let app_Key = "3457562873"
 let app_Secret = "f9c67b08304e08c69a853a203c71c126"
 let redirect_uri = "http://devxiaofan.com"
 
-
+let screenSize = UIScreen.mainScreen().bounds.size
 
 
 

@@ -10,7 +10,6 @@ import UIKit
 
 class XFHomeViewController: XFBaseViewController {
     
-    
     // MARK:- 懒加载
     private lazy var titleBtn : XFTitleButton = XFTitleButton()
     
@@ -46,7 +45,7 @@ extension XFHomeViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         
         // titleview
-        titleBtn.setTitle("张小烦", forState: .Normal)
+        titleBtn.setTitle(XFUserAccountTool.shareInstance.account?.screen_name, forState: .Normal)
         titleBtn.addTarget(self, action: "titleBtnClick:", forControlEvents: .TouchUpInside)
         
         navigationItem.titleView = titleBtn
@@ -72,9 +71,8 @@ extension XFHomeViewController {
         
         // 3.设置专场代理
         popVc.transitioningDelegate = popAnimator
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
-        let width = screenWidth * 0.6
-        let viewX = (screenWidth - width) * 0.5
+        let width = screenSize.width * 0.6
+        let viewX = (screenSize.width - width) * 0.5
         popAnimator.presentedFrame = CGRect(x: viewX, y: 55, width: width, height: 300)
         
         // 4.弹出控制器

@@ -37,7 +37,7 @@
                         <constraint firstAttribute="height" constant="90" id="jss-9V-iE5"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人, 回到这里看看有什么惊喜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvk-U0-SWX" userLabel="提示语">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人, 看看有什么惊喜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvk-U0-SWX" userLabel="提示语">
                     <rect key="frame" x="62" y="401" width="250" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="aYt-AG-bbx"/>
