@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08CC3604764C69CDD92D8046 /* Pods_XFWeiboSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F797CC8C2BE15889243BFC7 /* Pods_XFWeiboSwiftTests.framework */; };
 		BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */; };
+		BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */; };
 		BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */; };
 		BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */; };
 		BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */; };
@@ -33,6 +35,8 @@
 		BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */; };
 		BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDEB25171D55C4040010FFEA /* XFVisitorView.xib */; };
 		BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25191D55E4C90010FFEA /* UIBarButtonItem-Extension.swift */; };
+		DCC0B01295D229FA2F3B276B /* Pods_XFWeiboSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CED43B2876D149D217AB67 /* Pods_XFWeiboSwiftUITests.framework */; };
+		DF5FC913AD0E40D4A3E50310 /* Pods_XFWeiboSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9860B50643DFE55A4A184B7A /* Pods_XFWeiboSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +57,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30CED43B2876D149D217AB67 /* Pods_XFWeiboSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XFWeiboSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45921AE3EFA8D527DE412E2F /* Pods-XFWeiboSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwiftUITests/Pods-XFWeiboSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5932ED05110588B8BC20B7D9 /* Pods-XFWeiboSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwift/Pods-XFWeiboSwift.release.xcconfig"; sourceTree = "<group>"; };
+		5F797CC8C2BE15889243BFC7 /* Pods_XFWeiboSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XFWeiboSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94D2B1EDD20F59968A64F0D8 /* Pods-XFWeiboSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwiftUITests/Pods-XFWeiboSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9860B50643DFE55A4A184B7A /* Pods_XFWeiboSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XFWeiboSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6C191535B9AA0B02FAC034 /* Pods-XFWeiboSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwiftTests/Pods-XFWeiboSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CE6B92A890AF38E52230492 /* Pods-XFWeiboSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwift/Pods-XFWeiboSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		B4A97F133EE8F23344764490 /* Pods-XFWeiboSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwiftTests/Pods-XFWeiboSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopAnimator.swift; sourceTree = "<group>"; };
+		BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFNetWorkTools.swift; sourceTree = "<group>"; };
 		BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFTitleButton.swift; sourceTree = "<group>"; };
 		BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopViewController.swift; sourceTree = "<group>"; };
 		BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPopViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5FC913AD0E40D4A3E50310 /* Pods_XFWeiboSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08CC3604764C69CDD92D8046 /* Pods_XFWeiboSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +122,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC0B01295D229FA2F3B276B /* Pods_XFWeiboSwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		085041C290E67855E2760E4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9860B50643DFE55A4A184B7A /* Pods_XFWeiboSwift.framework */,
+				5F797CC8C2BE15889243BFC7 /* Pods_XFWeiboSwiftTests.framework */,
+				30CED43B2876D149D217AB67 /* Pods_XFWeiboSwiftUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		601C10331B91C5730EF446E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CE6B92A890AF38E52230492 /* Pods-XFWeiboSwift.debug.xcconfig */,
+				5932ED05110588B8BC20B7D9 /* Pods-XFWeiboSwift.release.xcconfig */,
+				9C6C191535B9AA0B02FAC034 /* Pods-XFWeiboSwiftTests.debug.xcconfig */,
+				B4A97F133EE8F23344764490 /* Pods-XFWeiboSwiftTests.release.xcconfig */,
+				45921AE3EFA8D527DE412E2F /* Pods-XFWeiboSwiftUITests.debug.xcconfig */,
+				94D2B1EDD20F59968A64F0D8 /* Pods-XFWeiboSwiftUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BD7F74B01D561BC500F6EC9D /* UIPopover */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +170,8 @@
 				BDB46A811D54933100BF8829 /* XFWeibo-SwiftTests */,
 				BDB46A8C1D54933100BF8829 /* XFWeibo-SwiftUITests */,
 				BDB46A6B1D54933100BF8829 /* Products */,
+				601C10331B91C5730EF446E8 /* Pods */,
+				085041C290E67855E2760E4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +289,7 @@
 				BDD22B411D55A730007A86F8 /* Categary */,
 				BDD22B441D55B959007A86F8 /* XFDefineFile.swift */,
 				BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */,
+				BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */,
 			);
 			path = "Tools (工具)";
 			sourceTree = "<group>";
@@ -277,9 +320,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB46A921D54933100BF8829 /* Build configuration list for PBXNativeTarget "XFWeiboSwift" */;
 			buildPhases = (
+				EFD09F495388F689E60E774B /* [CP] Check Pods Manifest.lock */,
 				BDB46A661D54933100BF8829 /* Sources */,
 				BDB46A671D54933100BF8829 /* Frameworks */,
 				BDB46A681D54933100BF8829 /* Resources */,
+				0D34AFC2C3B797D7BD43DF49 /* [CP] Embed Pods Frameworks */,
+				0FD313BFDF238C1F7C4853BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,9 +340,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB46A951D54933100BF8829 /* Build configuration list for PBXNativeTarget "XFWeiboSwiftTests" */;
 			buildPhases = (
+				BA9684BDCF8533D6D030448A /* [CP] Check Pods Manifest.lock */,
 				BDB46A7A1D54933100BF8829 /* Sources */,
 				BDB46A7B1D54933100BF8829 /* Frameworks */,
 				BDB46A7C1D54933100BF8829 /* Resources */,
+				08C940ED9097DFEE80A02B99 /* [CP] Embed Pods Frameworks */,
+				EB9D84C36E6C7DB13891C819 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -312,9 +361,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDB46A981D54933100BF8829 /* Build configuration list for PBXNativeTarget "XFWeiboSwiftUITests" */;
 			buildPhases = (
+				8841EDB0DEC4A22C19ED4BA3 /* [CP] Check Pods Manifest.lock */,
 				BDB46A851D54933100BF8829 /* Sources */,
 				BDB46A861D54933100BF8829 /* Frameworks */,
 				BDB46A871D54933100BF8829 /* Resources */,
+				42CA6B755321EB41962F1465 /* [CP] Embed Pods Frameworks */,
+				E2F1431994FEBC376ECA91A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -403,6 +455,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08C940ED9097DFEE80A02B99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XFWeiboSwiftTests/Pods-XFWeiboSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D34AFC2C3B797D7BD43DF49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XFWeiboSwift/Pods-XFWeiboSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0FD313BFDF238C1F7C4853BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XFWeiboSwift/Pods-XFWeiboSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42CA6B755321EB41962F1465 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XFWeiboSwiftUITests/Pods-XFWeiboSwiftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8841EDB0DEC4A22C19ED4BA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA9684BDCF8533D6D030448A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2F1431994FEBC376ECA91A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XFWeiboSwiftUITests/Pods-XFWeiboSwiftUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB9D84C36E6C7DB13891C819 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XFWeiboSwiftTests/Pods-XFWeiboSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFD09F495388F689E60E774B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BDB46A661D54933100BF8829 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -416,6 +606,7 @@
 				BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */,
 				BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */,
 				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
+				BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
 				BDB46AA61D549D9100BF8829 /* XFDisViewController.swift in Sources */,
 				BDB46AAA1D549DC800BF8829 /* XFMainViewController.swift in Sources */,
@@ -541,6 +732,7 @@
 		};
 		BDB46A931D54933100BF8829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CE6B92A890AF38E52230492 /* Pods-XFWeiboSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -556,6 +748,7 @@
 		};
 		BDB46A941D54933100BF8829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5932ED05110588B8BC20B7D9 /* Pods-XFWeiboSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -569,6 +762,7 @@
 		};
 		BDB46A961D54933100BF8829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C6C191535B9AA0B02FAC034 /* Pods-XFWeiboSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "XFWeibo-SwiftTests/Info.plist";
@@ -581,6 +775,7 @@
 		};
 		BDB46A971D54933100BF8829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4A97F133EE8F23344764490 /* Pods-XFWeiboSwiftTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "XFWeibo-SwiftTests/Info.plist";
@@ -593,6 +788,7 @@
 		};
 		BDB46A991D54933100BF8829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45921AE3EFA8D527DE412E2F /* Pods-XFWeiboSwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "XFWeibo-SwiftUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -605,6 +801,7 @@
 		};
 		BDB46A9A1D54933100BF8829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94D2B1EDD20F59968A64F0D8 /* Pods-XFWeiboSwiftUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "XFWeibo-SwiftUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
