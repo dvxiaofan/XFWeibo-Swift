@@ -135,21 +135,21 @@ extension XFOAuthViewController {
             }
             
             // 将字典专程模型对象
-            let user = XFUser(dict: accountDict)
+            let account = XFUserAccount(dict: accountDict)
             
             // 请求用户数据
-            self.loadUserInfo(user)
+            self.loadUserInfo(account)
         }
     }
     
     /// 请求用户数据
-    private func loadUserInfo(user : XFUser) {
+    private func loadUserInfo(account : XFUserAccount) {
         // 获取 accesstoken
-        guard let accessToken = user.access_token else {
+        guard let accessToken = account.access_token else {
             return
         }
         
-        guard let uid = user.uid else {
+        guard let uid = account.uid else {
             return
         }
         
@@ -166,8 +166,18 @@ extension XFOAuthViewController {
             }
             
             // 从字典中取出昵称和头像
-            user.screen_name = userInfoDict["screen_name"] as? String
-            user.avatar_large = userInfoDict["avatar_large"] as? String
+            account.screen_name = userInfoDict["screen_name"] as? String
+            account.avatar_large = userInfoDict["avatar_large"] as? String
+            
+            // 保存用户数据
+            // 获得沙盒路径
+            var accountPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+            accountPath = (accountPath as NSString).stringByAppendingPathComponent("user.plist")
+            XFLog(accountPath)
+            
+            // 保存对象
+            NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
+            
             
             
         }

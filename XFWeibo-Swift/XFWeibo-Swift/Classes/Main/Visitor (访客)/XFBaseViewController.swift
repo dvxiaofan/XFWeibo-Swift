@@ -14,21 +14,22 @@ class XFBaseViewController: UITableViewController {
     lazy var visitorView : XFVisitorView = XFVisitorView.vistitorView()
     
     // MARK:- 定义变量
-    var isLogin : Bool = false
+    var isLogin : Bool = XFUserAccountTool.shareInstance.isLogin
 
     // MARK:- 系统回调方法
     
     override func loadView() {
+        
+        // 判断是否还在访客视图
         isLogin ? super.loadView() : setupVistorView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 设置导航栏
         setupNavItem()
     }
-
-
 }
 
 // MARK: - 设置界面
