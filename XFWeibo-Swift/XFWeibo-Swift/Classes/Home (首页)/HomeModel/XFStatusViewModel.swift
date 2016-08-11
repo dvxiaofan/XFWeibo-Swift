@@ -19,6 +19,7 @@ class XFStatusViewModel: NSObject {
     var verifiedImage : UIImage?        // 处理认证类型图片
     var vipImage : UIImage?             // 处理会员等级图片
     var profileURL : NSURL?             // 处理用户头像 URL
+    var picURLs : [NSURL] = [NSURL]()   // 处理配图数据
     
     // MARK:- 自定义构造函数
     init(status : XFHomeStatus) {
@@ -63,6 +64,18 @@ class XFStatusViewModel: NSObject {
         // 5. 处理头像 URL
         let profileString = status.user?.profile_image_url ?? ""
         profileURL = NSURL(string: profileString)
+        
+        // 6. 处理配图数据
+        if let picURLDicts = status.pic_urls {
+            for picURLDict in picURLDicts {
+                guard let picURLString = picURLDict["thumbnail_pic"] else {
+                    continue
+                }
+                picURLs.append(NSURL(string: picURLString)!)
+                
+            }
+        }
+        
     }
 }
 

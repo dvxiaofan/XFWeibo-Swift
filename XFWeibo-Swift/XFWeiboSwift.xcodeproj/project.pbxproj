@@ -47,6 +47,7 @@
 		BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */; };
 		BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDEB25171D55C4040010FFEA /* XFVisitorView.xib */; };
 		BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25191D55E4C90010FFEA /* UIBarButtonItem-Extension.swift */; };
+		BDF46B9D1D5C736A003F2D75 /* XFPicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF46B9C1D5C736A003F2D75 /* XFPicCollectionView.swift */; };
 		DCC0B01295D229FA2F3B276B /* Pods_XFWeiboSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CED43B2876D149D217AB67 /* Pods_XFWeiboSwiftUITests.framework */; };
 		DF5FC913AD0E40D4A3E50310 /* Pods_XFWeiboSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9860B50643DFE55A4A184B7A /* Pods_XFWeiboSwift.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 		BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFVisitorView.swift; sourceTree = "<group>"; };
 		BDEB25171D55C4040010FFEA /* XFVisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFVisitorView.xib; sourceTree = "<group>"; };
 		BDEB25191D55E4C90010FFEA /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		BDF46B9C1D5C736A003F2D75 /* XFPicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPicCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 				BD54E2D01D5C20FB003D79F2 /* XFHome.storyboard */,
 				BD54E2D11D5C20FB003D79F2 /* XFHomeViewController.swift */,
 				BD54E2FC1D5C48DF003D79F2 /* XFHomeViewCell.swift */,
+				BDF46B9C1D5C736A003F2D75 /* XFPicCollectionView.swift */,
 				BD54E2CF1D5C20FB003D79F2 /* HomeModel */,
 				BD7F74B01D561BC500F6EC9D /* UIPopover */,
 			);
@@ -662,6 +665,7 @@
 			files = (
 				BDB46AA41D549D7400BF8829 /* XFMsgViewController.swift in Sources */,
 				BD54E2F71D5C3547003D79F2 /* NSDate-Extension.swift in Sources */,
+				BDF46B9D1D5C736A003F2D75 /* XFPicCollectionView.swift in Sources */,
 				BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */,
 				BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */,
 				BD54E2D31D5C20FB003D79F2 /* XFHomeViewController.swift in Sources */,

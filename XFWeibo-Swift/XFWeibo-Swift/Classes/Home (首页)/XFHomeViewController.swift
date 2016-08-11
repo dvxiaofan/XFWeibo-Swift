@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class XFHomeViewController: XFBaseViewController {
     
@@ -37,6 +38,10 @@ class XFHomeViewController: XFBaseViewController {
         
         // 请求数据
         loadHomeStatuses()
+        
+        // 自动计算高度, 并设置估算高度
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
     }
 
 }
@@ -86,6 +91,8 @@ extension XFHomeViewController {
         presentViewController(popVc, animated: true, completion: nil)
     }
     
+    
+    
 }
 
 // MARK:- 请求数据
@@ -111,7 +118,29 @@ extension XFHomeViewController {
                 self.viewModels.append(viewModel)
             }
             
-            // 刷新表格
+            // 缓存图片
+            self.cacheImages(self.viewModels)
+        }
+    }
+    
+    // MARK:- 缓存图片
+    private func cacheImages(viewModels : [XFStatusViewModel]) {
+        // 创建多线程 group
+        let group = dispatch_group_create()
+        
+        for viewModel in viewModels {
+            for picURL in viewModel.picURLs {
+                // 进入组
+                dispatch_group_enter(group)
+                
+                SDWebImageManager.sharedManager().downloadImageWithURL(picURL, options: [], progress: nil, completed: { (_, _, _, _, _) -> Void in
+                    // 离开组
+                    dispatch_group_leave(group)
+                })
+            }
+        }
+        // 刷新表格
+        dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
             self.tableView.reloadData()
         }
     }
