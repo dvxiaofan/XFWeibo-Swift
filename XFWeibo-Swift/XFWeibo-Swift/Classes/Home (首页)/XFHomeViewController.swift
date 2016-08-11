@@ -109,11 +109,11 @@ extension XFHomeViewController {
             guard let resultArray = result else {
                 return
             }
-            
             // 遍历数组对应的字典
             for statusDict in resultArray {
                 // 字典数据转模型
                 let status = XFHomeStatus(dict: statusDict)
+                
                 let viewModel = XFStatusViewModel(status: status)
                 self.viewModels.append(viewModel)
             }

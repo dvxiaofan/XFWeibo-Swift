@@ -84,7 +84,7 @@ class XFHomeViewCell: UITableViewCell {
             picViewWidthCons.constant = picViewSize.width
             picViewHieghtCons.constant = picViewSize.height
             
-            // 将 picURL 数据传递给 picview\
+            // 将 picURL 数据传递给 picview
             picView.picURLs = viewModel.picURLs
         }
     }
@@ -116,6 +116,7 @@ extension XFHomeViewCell {
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(viewModel?.picURLs.last?.absoluteString)
             // 单张图片的 layoutsize
             layout.itemSize = CGSize(width: image.size.width * 2, height: image.size.height * 2)
+            
             return CGSize(width: image.size.width * 2, height: image.size.height * 2)
         }
         

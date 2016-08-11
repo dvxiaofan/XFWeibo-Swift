@@ -20,22 +20,42 @@ class XFHomeStatus: NSObject {
     var comments_count : Int = 0            // 评论数
     var attitudes_count : Int = 0           // 点赞数
     var pic_urls : [[String : String]]?     // 配图
+    var retweeted_status : XFHomeStatus?    // 转发微博
+    
+    var test : Int = 0
     
     // MARK:- 自定义构造函数
+    
     init(dict : [String : AnyObject]) {
         super.init()
         
         setValuesForKeysWithDictionary(dict)
         
         // 将用户字典专程用户模型
-        if let userDict = dict["user"] as? [String : AnyObject] {
-            user = XFUser(dict: userDict)
+        if let userDict = dict["user"] as? [String : AnyObject]? {
+            user = XFUser(dict: userDict!)
+        }
+        
+        // 将转发微博字典专程用户模型
+        if let retweetedStatusDict = dict["retweeted_status"] as? [String : AnyObject]? {
+            retweeted_status = XFHomeStatus(dict: retweetedStatusDict!)
         }
     }
     
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
-
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        test++
+        XFLog(test)
+    }
+    
 }
+
+
+
+
+
+
+
+
 
 
 

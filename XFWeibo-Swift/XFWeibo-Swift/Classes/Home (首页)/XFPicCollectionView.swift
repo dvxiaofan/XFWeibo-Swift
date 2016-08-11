@@ -53,7 +53,6 @@ class XFPicCollectionViewCell: UICollectionViewCell {
             guard let picURL = picURL else {
                 return
             }
-            
             pictureView.sd_setImageWithURL(picURL, placeholderImage: UIImage(named: "timeline_image_placeholder"))
         }
     }
