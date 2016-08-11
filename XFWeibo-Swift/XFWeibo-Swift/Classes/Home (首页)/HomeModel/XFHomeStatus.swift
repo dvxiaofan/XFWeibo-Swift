@@ -11,7 +11,16 @@ import UIKit
 class XFHomeStatus: NSObject {
     
     // MARK:- 属性
-    var created_at : String?        // 创建时间
+    var created_at : String? {      // 创建时间
+        didSet {
+            guard let created_at = created_at else {
+                return
+            }
+            
+            // 对时间处理
+            createdAtText = NSDate.createrDateString(created_at)
+        }
+    }
     var source : String? {          // 来源
         didSet {
             // 空值校验
@@ -32,7 +41,7 @@ class XFHomeStatus: NSObject {
     
     // MARK:- 自定义数据处理属性
     var sourceText : String?        // 处理来源数据
-    var created_atText : String?    // 处理创建时间
+    var createdAtText : String?    // 处理创建时间
     
     // MARK:- 自定义构造函数
     init(dict : [String : AnyObject]) {

@@ -129,7 +129,7 @@ extension XFHomeViewController {
         
         // 设置数据
         let status = statuses[indexPath.row]
-        cell.textLabel?.text = status.text
+        cell.textLabel?.text = status.createdAtText
         
         return cell
     }
