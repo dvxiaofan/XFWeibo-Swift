@@ -126,11 +126,10 @@ extension XFHomeViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // 创建 cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as! XFHomeViewCell
         
         // 设置数据
-        let viewModel = viewModels[indexPath.row]
-        cell.textLabel?.text = viewModel.createdAtText
+        cell.viewModel = viewModels[indexPath.row]
         
         return cell
     }

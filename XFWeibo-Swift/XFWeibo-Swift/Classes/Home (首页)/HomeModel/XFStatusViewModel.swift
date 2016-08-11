@@ -18,6 +18,7 @@ class XFStatusViewModel: NSObject {
     var createdAtText : String?         // 处理创建时间
     var verifiedImage : UIImage?        // 处理认证类型图片
     var vipImage : UIImage?             // 处理会员等级图片
+    var profileURL : NSURL?             // 处理用户头像 URL
     
     // MARK:- 自定义构造函数
     init(status : XFHomeStatus) {
@@ -58,6 +59,10 @@ class XFStatusViewModel: NSObject {
         if mbrank > 0 && mbrank <= 6 {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
         }
+        
+        // 5. 处理头像 URL
+        let profileString = status.user?.profile_image_url ?? ""
+        profileURL = NSURL(string: profileString)
     }
 }
 

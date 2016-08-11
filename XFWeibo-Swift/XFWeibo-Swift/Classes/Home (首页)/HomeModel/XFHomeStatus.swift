@@ -17,7 +17,6 @@ class XFHomeStatus: NSObject {
     var mid : Int = 0                   // id
     var user : XFUser?                  // 用户数据模型
     
-    
     // MARK:- 自定义构造函数
     init(dict : [String : AnyObject]) {
         super.init()
