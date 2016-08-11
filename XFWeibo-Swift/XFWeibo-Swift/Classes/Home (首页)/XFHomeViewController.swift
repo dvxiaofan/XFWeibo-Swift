@@ -10,6 +10,8 @@ import UIKit
 
 class XFHomeViewController: XFBaseViewController {
     
+    // MARK:- 属性
+    
     // MARK:- 懒加载
     private lazy var titleBtn : XFTitleButton = XFTitleButton()
     
@@ -17,6 +19,8 @@ class XFHomeViewController: XFBaseViewController {
         
         self?.titleBtn.selected = presented
     }
+    // 模型数组
+    private lazy var statuses : [XFHomeStatus] = [XFHomeStatus]()
     
     // MARK:- 系统回调方法
     override func viewDidLoad() {
@@ -30,6 +34,9 @@ class XFHomeViewController: XFBaseViewController {
         
         // 设置导航栏内容
         setupNavBar()
+        
+        // 请求数据
+        loadHomeStatuses()
     }
 
 }
@@ -80,6 +87,62 @@ extension XFHomeViewController {
     }
     
 }
+
+// MARK:- 请求数据
+extension XFHomeViewController {
+    private func loadHomeStatuses() {
+        XFNetWorkTools.shareInstance.loadHomeStatuses { (result, error) -> () in
+            // 错误校验
+            if error != nil {
+                XFLog(error)
+                return
+            }
+            
+            // 获取可选类型中的数组
+            guard let resultArray = result else {
+                return
+            }
+            
+            // 遍历数组对应的字典
+            for statusDict in resultArray {
+                // 字典数据转模型
+                let status = XFHomeStatus(dict: statusDict)
+                self.statuses.append(status)
+            }
+            
+            // 刷新表格
+            self.tableView.reloadData()
+        }
+    }
+}
+
+// MARK:- tableview 数据源方法
+extension XFHomeViewController {
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // 创建 cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell")!
+        
+        // 设置数据
+        let status = statuses[indexPath.row]
+        cell.textLabel?.text = status.text
+        
+        return cell
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 

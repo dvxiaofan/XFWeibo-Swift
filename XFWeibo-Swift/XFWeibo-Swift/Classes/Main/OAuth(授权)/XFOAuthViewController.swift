@@ -179,9 +179,6 @@ extension XFOAuthViewController {
             self.dismissViewControllerAnimated(false, completion: { () -> Void in
                 UIApplication.sharedApplication().keyWindow?.rootViewController = XFWelcomeViewController()
             })
-            
-            
-            
         }
     }
     

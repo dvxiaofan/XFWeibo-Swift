@@ -71,7 +71,6 @@ extension XFNetWorkTools {
 
 // MARK:- 请求用户数据
 extension XFNetWorkTools {
-    
     func loadUserInfo(access_token : String, uid : String, finished : (result : [String : AnyObject]?, error : NSError?) -> ()) {
         
         let urlString = "https://api.weibo.com/2/users/show.json"
@@ -83,6 +82,36 @@ extension XFNetWorkTools {
         }
     }
 }
+
+// MARK:- 请求主页数据
+extension XFNetWorkTools {
+    func loadHomeStatuses(finished : (result : [[String : AnyObject]]?, error : NSError?) -> ()) {
+        
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        
+        let parameters = ["access_token" : (XFUserAccountTool.shareInstance.account?.access_token)!]
+        
+        requestData(methodType: .GET, urlString: urlString, parameters: parameters) { (result, error) -> () in
+            // 数据转字典
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(result: nil, error: error)
+                return
+            }
+            // 将数组数据回调给外界
+            finished(result: resultDict["statuses"] as? [[String : AnyObject]], error: error)
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
