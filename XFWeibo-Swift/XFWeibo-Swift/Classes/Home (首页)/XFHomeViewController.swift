@@ -20,7 +20,7 @@ class XFHomeViewController: XFBaseViewController {
         self?.titleBtn.selected = presented
     }
     // 模型数组
-    private lazy var statuses : [XFHomeStatus] = [XFHomeStatus]()
+    private lazy var viewModels : [XFStatusViewModel] = [XFStatusViewModel]()
     
     // MARK:- 系统回调方法
     override func viewDidLoad() {
@@ -107,7 +107,8 @@ extension XFHomeViewController {
             for statusDict in resultArray {
                 // 字典数据转模型
                 let status = XFHomeStatus(dict: statusDict)
-                self.statuses.append(status)
+                let viewModel = XFStatusViewModel(status: status)
+                self.viewModels.append(viewModel)
             }
             
             // 刷新表格
@@ -120,7 +121,7 @@ extension XFHomeViewController {
 extension XFHomeViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statuses.count
+        return viewModels.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -128,8 +129,8 @@ extension XFHomeViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell")!
         
         // 设置数据
-        let status = statuses[indexPath.row]
-        cell.textLabel?.text = status.createdAtText
+        let viewModel = viewModels[indexPath.row]
+        cell.textLabel?.text = viewModel.createdAtText
         
         return cell
     }

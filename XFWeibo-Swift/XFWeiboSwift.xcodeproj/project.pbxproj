@@ -19,6 +19,8 @@
 		BD54E2D31D5C20FB003D79F2 /* XFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD54E2D11D5C20FB003D79F2 /* XFHomeViewController.swift */; };
 		BD54E2D51D5C2120003D79F2 /* XFHomeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD54E2D41D5C2120003D79F2 /* XFHomeStatus.swift */; };
 		BD54E2F71D5C3547003D79F2 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD54E2F61D5C3547003D79F2 /* NSDate-Extension.swift */; };
+		BD54E2F91D5C3761003D79F2 /* XFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD54E2F81D5C3761003D79F2 /* XFUser.swift */; };
+		BD54E2FB1D5C3D3E003D79F2 /* XFStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD54E2FA1D5C3D3E003D79F2 /* XFStatusViewModel.swift */; };
 		BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */; };
 		BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */; };
 		BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */; };
@@ -86,6 +88,8 @@
 		BD54E2D11D5C20FB003D79F2 /* XFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFHomeViewController.swift; sourceTree = "<group>"; };
 		BD54E2D41D5C2120003D79F2 /* XFHomeStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFHomeStatus.swift; sourceTree = "<group>"; };
 		BD54E2F61D5C3547003D79F2 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		BD54E2F81D5C3761003D79F2 /* XFUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFUser.swift; sourceTree = "<group>"; };
+		BD54E2FA1D5C3D3E003D79F2 /* XFStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFStatusViewModel.swift; sourceTree = "<group>"; };
 		BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFTitleButton.swift; sourceTree = "<group>"; };
 		BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopViewController.swift; sourceTree = "<group>"; };
 		BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPopViewController.xib; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				BD54E2D41D5C2120003D79F2 /* XFHomeStatus.swift */,
+				BD54E2F81D5C3761003D79F2 /* XFUser.swift */,
+				BD54E2FA1D5C3D3E003D79F2 /* XFStatusViewModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -657,12 +663,14 @@
 				BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */,
 				BD54E2D31D5C20FB003D79F2 /* XFHomeViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
+				BD54E2FB1D5C3D3E003D79F2 /* XFStatusViewModel.swift in Sources */,
 				BD7F74B61D56242000F6EC9D /* XFPresentationController.swift in Sources */,
 				BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */,
 				BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */,
 				BDEB251A1D55E4C90010FFEA /* UIBarButtonItem-Extension.swift in Sources */,
 				BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */,
 				BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */,
+				BD54E2F91D5C3761003D79F2 /* XFUser.swift in Sources */,
 				BD3E344B1D5B01A40088B23F /* XFCommon.swift in Sources */,
 				BDADBFFB1D5B66B80064EF28 /* XFWelcomeViewController.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
