@@ -36,6 +36,7 @@ class XFHomeViewCell: UITableViewCell {
     @IBOutlet weak var picViewHieghtCons: NSLayoutConstraint!
     @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
     @IBOutlet weak var retweetContentTopCons: NSLayoutConstraint!
+    @IBOutlet weak var reteetContentBottomCons: NSLayoutConstraint!
     
     // MARK:- 自定义属性
     var viewModel : XFStatusViewModel? {
@@ -134,7 +135,8 @@ extension XFHomeViewCell {
     private func calculatePicViewSize(count : Int) -> CGSize {
         // 1. 没有配图 , 底部约束为0
         if count == 0 {
-            picViewBottomCons.constant = -15
+            picViewBottomCons.constant = 0
+            reteetContentBottomCons.constant = 5;
             return CGSizeZero
         }
         

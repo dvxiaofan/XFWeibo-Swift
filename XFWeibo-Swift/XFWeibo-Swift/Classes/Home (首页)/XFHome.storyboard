@@ -247,6 +247,7 @@
                                     <outlet property="picViewHieghtCons" destination="pGg-EJ-7Vc" id="d9X-RP-NhH"/>
                                     <outlet property="picViewWidthCons" destination="CQI-A1-bs3" id="Pwz-CL-b5q"/>
                                     <outlet property="repostButton" destination="svH-JQ-eXM" id="fqM-GP-PF5"/>
+                                    <outlet property="reteetContentBottomCons" destination="lkd-hn-L2r" id="GKf-mk-RqP"/>
                                     <outlet property="retweetBgView" destination="reQ-HW-jwL" id="QyG-aX-vV5"/>
                                     <outlet property="retweetContentTopCons" destination="ZmC-ZL-hZJ" id="X37-wq-Byq"/>
                                     <outlet property="retweetedLabel" destination="G8Q-YP-fd2" id="ZNI-Ue-zg0"/>

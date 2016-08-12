@@ -41,6 +41,7 @@ class XFHomeViewController: XFBaseViewController {
         
         // 设置估算高度
         tableView.estimatedRowHeight = 200
+        
     }
 
 }
