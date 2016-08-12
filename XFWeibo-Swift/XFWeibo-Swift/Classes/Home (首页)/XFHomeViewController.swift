@@ -16,6 +16,7 @@ class XFHomeViewController: XFBaseViewController {
     
     // MARK:- 懒加载
     private lazy var titleBtn : XFTitleButton = XFTitleButton()
+    private lazy var tipLabel : UILabel = UILabel()
     
     private lazy var popAnimator : XFPopAnimator = XFPopAnimator {[weak self] (presented) -> () in
         
@@ -48,12 +49,15 @@ class XFHomeViewController: XFBaseViewController {
         
         // 设置上来加载更多
         setupFooterView()
+        
+        // 设置提示 label
+        setupTipLabel()
     }
 }
 
 // MARK:- 设置界面
 extension XFHomeViewController {
-    // MARK:- 设置导航栏
+    ///设置导航栏
     private func setupNavBar() {
         // zuo
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendsearch")
@@ -68,7 +72,7 @@ extension XFHomeViewController {
         navigationItem.titleView = titleBtn
     }
     
-    // MARK:- 设置 headerview
+    ///设置 headerview
     private func setupHeaderView() {
         // 下拉刷新 headerview
         let headerView = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadNewStatuses")
@@ -86,24 +90,37 @@ extension XFHomeViewController {
         tableView.mj_header.beginRefreshing()
     }
     
-    // MARK:- 设置 footerveiw
+    ///设置 footerveiw
     private func setupFooterView() {
         let footerView = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "loadMoreStatuses");
         footerView.setTitle("加载中...", forState: .Refreshing)
         footerView.automaticallyHidden = true
         
         tableView.mj_footer = footerView
+    }
+    
+    ///提示 label
+    private func setupTipLabel() {
+        navigationController?.navigationBar.insertSubview(tipLabel, atIndex: 0)
         
+        tipLabel.frame = CGRect(x: 0, y: 10, width: screenSize.width, height: 32)
+        
+        tipLabel.backgroundColor = UIColor.orangeColor()
+        tipLabel.textColor = UIColor.whiteColor()
+        tipLabel.font = UIFont.systemFontOfSize(14)
+        tipLabel.textAlignment = .Center
+        
+        tipLabel.hidden = true
     }
 }
 
 // MARK:- 事件监听
 extension XFHomeViewController {
-    // MARK:- 左按钮点击 
+    ///左按钮点击
     
-    // MARK:- 右按钮点击
+    ///右按钮点击
     
-    // MARK:- titleView 点击
+    ///titleView 点击
     @objc private func titleBtnClick(titleBtn : XFTitleButton) {
         
         // 1.创建弹出的控制器
@@ -121,9 +138,6 @@ extension XFHomeViewController {
         // 4.弹出控制器
         presentViewController(popVc, animated: true, completion: nil)
     }
-    
-    
-    
 }
 
 // MARK:- 请求数据
@@ -133,7 +147,7 @@ extension XFHomeViewController {
         loadHomeStatuses(true)
     }
     
-    // MARK:- 加载更多数据
+    /// 加载更多数据
     @objc private func loadMoreStatuses() {
         loadHomeStatuses(false)
     }
@@ -185,10 +199,15 @@ extension XFHomeViewController {
             
             // 缓存图片
             self.cacheImages(tempViewModel)
+            
+            if isNewData {
+                // 显示提示 label
+                self.showTipLabel(tempViewModel.count)
+            }
         }
     }
     
-    // MARK:- 缓存图片
+    /// 缓存图片
     private func cacheImages(viewModels : [XFStatusViewModel]) {
         // 创建多线程 group
         let group = dispatch_group_create()
@@ -209,9 +228,31 @@ extension XFHomeViewController {
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+            
+            // 显示提示 label
+            //self.showTipLabel(viewModels.count)
+            
         }
     }
     
+    /// 显示提示 label
+    private func showTipLabel(count : Int) {
+        tipLabel.hidden = false
+        
+        tipLabel.text = count == 0 ? "没有新数据" : "\(count) 条新微博"
+        
+        // 动画显示
+        let durationTime = 0.7
+        UIView.animateWithDuration(durationTime, animations: { () -> Void in
+            self.tipLabel.frame.origin.y = 44
+            }) { (_) -> Void in
+                UIView.animateWithDuration(durationTime, delay: 1.5, options: [], animations: { () -> Void in
+                    self.tipLabel.frame.origin.y = 10
+                    }, completion: { (_) -> Void in
+                        self.tipLabel.hidden = true
+                })
+        }
+    }
 }
 
 // MARK:- tableview 数据源方法
