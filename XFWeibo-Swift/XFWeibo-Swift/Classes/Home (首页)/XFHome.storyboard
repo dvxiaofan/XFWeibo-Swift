@@ -8,16 +8,16 @@
         <scene sceneID="EkK-4Q-7v5">
             <objects>
                 <tableViewController id="Gax-5p-5iB" customClass="XFHomeViewController" customModule="XFWeiboSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="285" sectionHeaderHeight="28" sectionFooterHeight="28" id="r9T-6t-LLH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="359" sectionHeaderHeight="28" sectionFooterHeight="28" id="r9T-6t-LLH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="285" id="v14-nC-PTL" customClass="XFHomeViewCell" customModule="XFWeiboSwift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="285"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="359" id="v14-nC-PTL" customClass="XFHomeViewCell" customModule="XFWeiboSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="359"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v14-nC-PTL" id="RGN-WS-obT">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="285"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="359"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_small" translatesAutoresizingMaskIntoConstraints="NO" id="9dk-9W-ibZ" userLabel="头像">
@@ -75,7 +75,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhw-jC-ljd" userLabel="底部工具栏">
-                                            <rect key="frame" x="0.0" y="245" width="600" height="40"/>
+                                            <rect key="frame" x="0.0" y="319" width="600" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9q-q8-vcg" userLabel="评论按钮">
                                                     <rect key="frame" x="200" y="1" width="200" height="32"/>
@@ -150,8 +150,14 @@
                                                 <constraint firstItem="rRs-Mv-A1u" firstAttribute="height" secondItem="svH-JQ-eXM" secondAttribute="height" id="xjM-s9-K20"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="转发的正文转发" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8Q-YP-fd2" userLabel="转发正文">
+                                            <rect key="frame" x="15" y="116" width="100" height="55"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2np-gm-J1Z" userLabel="配图" customClass="XFPicCollectionView" customModule="XFWeiboSwift" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="111" width="240" height="128"/>
+                                            <rect key="frame" x="15" y="181" width="240" height="128"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="CQI-A1-bs3"/>
@@ -201,20 +207,25 @@
                                         <constraint firstAttribute="bottom" secondItem="Qhw-jC-ljd" secondAttribute="bottom" id="SVb-c5-8Zs"/>
                                         <constraint firstItem="nmt-Ke-nr0" firstAttribute="leading" secondItem="9dk-9W-ibZ" secondAttribute="trailing" constant="15" id="VBq-o3-0I1"/>
                                         <constraint firstAttribute="trailing" secondItem="Qhw-jC-ljd" secondAttribute="trailing" id="WH8-9O-MFd"/>
+                                        <constraint firstItem="G8Q-YP-fd2" firstAttribute="top" secondItem="7rZ-sg-YoS" secondAttribute="bottom" constant="15" id="ZmC-ZL-hZJ"/>
                                         <constraint firstItem="sXd-Ps-HkF" firstAttribute="leading" secondItem="nmt-Ke-nr0" secondAttribute="trailing" constant="5" id="dHO-GJ-fXy"/>
                                         <constraint firstItem="w8S-v7-4Dl" firstAttribute="leading" secondItem="tQ1-tS-dSH" secondAttribute="trailing" constant="10" id="eUz-jW-tyg"/>
                                         <constraint firstItem="sXd-Ps-HkF" firstAttribute="centerY" secondItem="nmt-Ke-nr0" secondAttribute="centerY" id="gjl-hZ-eRP"/>
                                         <constraint firstItem="9dk-9W-ibZ" firstAttribute="top" secondItem="RGN-WS-obT" secondAttribute="top" constant="10" id="hzA-x7-L91"/>
                                         <constraint firstItem="9dk-9W-ibZ" firstAttribute="leading" secondItem="RGN-WS-obT" secondAttribute="leading" constant="15" id="iw7-pf-Wy1"/>
                                         <constraint firstItem="tQ1-tS-dSH" firstAttribute="leading" secondItem="nmt-Ke-nr0" secondAttribute="leading" id="k8G-TD-bpN"/>
+                                        <constraint firstItem="G8Q-YP-fd2" firstAttribute="width" secondItem="7rZ-sg-YoS" secondAttribute="width" id="ksD-Lc-psQ"/>
+                                        <constraint firstItem="2np-gm-J1Z" firstAttribute="top" secondItem="G8Q-YP-fd2" secondAttribute="bottom" constant="10" id="lkd-hn-L2r"/>
                                         <constraint firstItem="Qhw-jC-ljd" firstAttribute="top" secondItem="2np-gm-J1Z" secondAttribute="bottom" priority="700" constant="10" id="mRw-7s-ghc"/>
                                         <constraint firstItem="KW1-Pj-CkJ" firstAttribute="bottom" secondItem="9dk-9W-ibZ" secondAttribute="bottom" id="mfX-R8-9EP"/>
                                         <constraint firstItem="w8S-v7-4Dl" firstAttribute="centerY" secondItem="tQ1-tS-dSH" secondAttribute="centerY" id="nCc-87-eU8"/>
                                         <constraint firstItem="nmt-Ke-nr0" firstAttribute="top" secondItem="9dk-9W-ibZ" secondAttribute="top" id="unl-WR-Tda"/>
                                         <constraint firstItem="tQ1-tS-dSH" firstAttribute="bottom" secondItem="9dk-9W-ibZ" secondAttribute="bottom" id="vIC-6i-b3j"/>
+                                        <constraint firstItem="G8Q-YP-fd2" firstAttribute="leading" secondItem="7rZ-sg-YoS" secondAttribute="leading" id="zrC-JY-ZAV"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="O9m-vn-94d"/>
                                             <exclude reference="6Cc-a6-3an"/>
                                         </mask>
                                     </variation>
@@ -229,6 +240,7 @@
                                     <outlet property="picViewHieghtCons" destination="pGg-EJ-7Vc" id="d9X-RP-NhH"/>
                                     <outlet property="picViewWidthCons" destination="CQI-A1-bs3" id="Pwz-CL-b5q"/>
                                     <outlet property="repostButton" destination="svH-JQ-eXM" id="fqM-GP-PF5"/>
+                                    <outlet property="retweetedLabel" destination="G8Q-YP-fd2" id="ZNI-Ue-zg0"/>
                                     <outlet property="screenNameLabel" destination="nmt-Ke-nr0" id="AL3-0E-7K5"/>
                                     <outlet property="sourceLabel" destination="w8S-v7-4Dl" id="JMi-Yf-Xbn"/>
                                     <outlet property="verifidTypeView" destination="KW1-Pj-CkJ" id="7Ac-yT-LrU"/>
@@ -246,7 +258,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK5-la-6KF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2058" y="-663"/>
+            <point key="canvasLocation" x="-2092" y="-663"/>
         </scene>
         <!--首页-->
         <scene sceneID="NbX-x7-hne">

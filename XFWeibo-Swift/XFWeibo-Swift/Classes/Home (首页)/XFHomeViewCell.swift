@@ -26,6 +26,7 @@ class XFHomeViewCell: UITableViewCell {
     @IBOutlet weak var zanButton: UIButton!
     
     @IBOutlet weak var picView: XFPicCollectionView!
+    @IBOutlet weak var retweetedLabel: UILabel!
     
     // MARK:- 约束属性
     @IBOutlet weak var contentLabelWidthCons: NSLayoutConstraint!
@@ -38,54 +39,66 @@ class XFHomeViewCell: UITableViewCell {
             guard let viewModel = viewModel else {
                 return
             }
-            // 头像
+            // 1.头像
             iconView.sd_setImageWithURL(viewModel.profileURL, placeholderImage: UIImage(named: "avatar_default_small"))
             
-            // 认证
+            // 2.认证
             verifidTypeView.image = viewModel.verifiedImage
             
-            // vip
+            // 3.vip
             vipView.image = viewModel.vipImage
             
-            // 昵称
+            // 4.昵称
             screenNameLabel.text = viewModel.status?.user?.screen_name
             
-            // 昵称颜色
+            // 5.昵称颜色
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.blackColor() : UIColor.orangeColor()
             
-            // 时间
+            // 6.时间
             createAtLabel.text = viewModel.createdAtText
             
-            // 来源
+            // 7.来源
             sourceLabel.text = viewModel.sourceText
             
-            // 正文
+            // 8.正文
             contentLabel.text = viewModel.status?.text
             
-            // 转发数
+            // 9.转发数
             if let repostCount = viewModel.status?.reposts_count where repostCount != 0  {
                 
                 repostButton.setTitle("\(repostCount)", forState: .Normal)
             }
             
-            // 评论数
+            // 10.评论数
             if let commentCount = viewModel.status?.comments_count where commentCount != 0  {
                 
                 commentButton.setTitle("\(commentCount)", forState: .Normal)
             }
             
-            // 点赞数
+            // 11.点赞数
             if let zanCount = viewModel.status?.attitudes_count where zanCount != 0 {
                 zanButton.setTitle("\(zanCount)", forState: .Normal)
             }
             
-            // 计算配图 view 宽度和高度约束
+            // 12.计算配图 view 宽度和高度约束
             let picViewSize = calculatePicViewSize(viewModel.picURLs.count)
             picViewWidthCons.constant = picViewSize.width
             picViewHieghtCons.constant = picViewSize.height
             
-            // 将 picURL 数据传递给 picview
+            // 13.将 picURL 数据传递给 picview
             picView.picURLs = viewModel.picURLs
+            
+            // 14. 设置转发微博正文
+            if viewModel.status?.retweeted_status != nil {
+                
+                if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,  retContent = viewModel.status?.retweeted_status?.text {
+                    retweetedLabel.text = "@" + "\(screenName): " + retContent
+                }
+            } else {
+                retweetedLabel.text = nil
+            }
+            
+            
         }
     }
 
