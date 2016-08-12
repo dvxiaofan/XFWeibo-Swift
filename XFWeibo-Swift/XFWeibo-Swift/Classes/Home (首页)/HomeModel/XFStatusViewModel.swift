@@ -13,6 +13,8 @@ class XFStatusViewModel: NSObject {
     // MARK:- 定义属性
     var status : XFHomeStatus?
     
+    var cellHeight : CGFloat = 0
+    
     // MARK:- 自定义数据处理属性
     var sourceText : String?            // 处理来源数据
     var createdAtText : String?         // 处理创建时间
@@ -66,7 +68,10 @@ class XFStatusViewModel: NSObject {
         profileURL = NSURL(string: profileString)
         
         // 6. 处理配图数据
-        if let picURLDicts = status.pic_urls {
+        // 判断图片数据来源
+        let picURLDicts = status.pic_urls!.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        
+        if let picURLDicts = picURLDicts {
             for picURLDict in picURLDicts {
                 guard let picURLString = picURLDict["thumbnail_pic"] else {
                     continue

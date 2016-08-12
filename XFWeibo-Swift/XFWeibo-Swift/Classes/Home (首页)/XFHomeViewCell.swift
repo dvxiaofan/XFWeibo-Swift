@@ -24,6 +24,8 @@ class XFHomeViewCell: UITableViewCell {
     @IBOutlet weak var repostButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var zanButton: UIButton!
+    @IBOutlet weak var retweetBgView: UIView!
+    @IBOutlet weak var bottomToolView: UIView!
     
     @IBOutlet weak var picView: XFPicCollectionView!
     @IBOutlet weak var retweetedLabel: UILabel!
@@ -32,6 +34,8 @@ class XFHomeViewCell: UITableViewCell {
     @IBOutlet weak var contentLabelWidthCons: NSLayoutConstraint!
     @IBOutlet weak var picViewWidthCons: NSLayoutConstraint!
     @IBOutlet weak var picViewHieghtCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var retweetContentTopCons: NSLayoutConstraint!
     
     // MARK:- 自定义属性
     var viewModel : XFStatusViewModel? {
@@ -88,17 +92,30 @@ class XFHomeViewCell: UITableViewCell {
             // 13.将 picURL 数据传递给 picview
             picView.picURLs = viewModel.picURLs
             
-            // 14. 设置转发微博正文
+            // 14. 设置转发微博正文 和背景颜色
             if viewModel.status?.retweeted_status != nil {
                 
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,  retContent = viewModel.status?.retweeted_status?.text {
                     retweetedLabel.text = "@" + "\(screenName): " + retContent
+                    // 设置转发正文顶部约束
+                    retweetContentTopCons.constant = 15
                 }
+                retweetBgView.hidden = false
+                
             } else {
                 retweetedLabel.text = nil
+                retweetBgView.hidden = true
+                // 设置转发正文顶部约束
+                retweetContentTopCons.constant = 0
             }
             
-            
+            // 15. 计算 cell 高度
+            if viewModel.cellHeight == 0 {
+                //15.1 先强制布局
+                layoutIfNeeded()
+                // 15.2 获取底部工具类最大 y 值
+                viewModel.cellHeight = CGRectGetMaxY(bottomToolView.frame)
+            }
         }
     }
 
@@ -115,10 +132,14 @@ class XFHomeViewCell: UITableViewCell {
 extension XFHomeViewCell {
     /// 计算配图 view 宽度和高度约束
     private func calculatePicViewSize(count : Int) -> CGSize {
-        // 1. 没有配图
+        // 1. 没有配图 , 底部约束为0
         if count == 0 {
+            picViewBottomCons.constant = -15
             return CGSizeZero
         }
+        
+        // 有配图, 底部约束有值
+        picViewBottomCons.constant = 10
         
         // 2.取出picView 对应 layout
         let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout

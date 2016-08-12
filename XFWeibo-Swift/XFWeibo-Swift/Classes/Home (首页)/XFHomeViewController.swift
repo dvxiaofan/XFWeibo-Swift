@@ -39,8 +39,7 @@ class XFHomeViewController: XFBaseViewController {
         // 请求数据
         loadHomeStatuses()
         
-        // 自动计算高度, 并设置估算高度
-        tableView.rowHeight = UITableViewAutomaticDimension
+        // 设置估算高度
         tableView.estimatedRowHeight = 200
     }
 
@@ -161,6 +160,12 @@ extension XFHomeViewController {
         cell.viewModel = viewModels[indexPath.row]
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let viewModel = viewModels[indexPath.row]
+        
+        return viewModel.cellHeight
     }
 }
 
