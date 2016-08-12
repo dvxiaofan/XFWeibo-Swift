@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		08CC3604764C69CDD92D8046 /* Pods_XFWeiboSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F797CC8C2BE15889243BFC7 /* Pods_XFWeiboSwiftTests.framework */; };
 		BD0B4CA81D5B168B0077593A /* XFUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B4CA71D5B168B0077593A /* XFUserAccount.swift */; };
+		BD1EE61E1D5D9DE9008A9B0D /* XFCompViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE61C1D5D9DE8008A9B0D /* XFCompViewController.swift */; };
+		BD1EE61F1D5D9DE9008A9B0D /* XFCompViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1EE61D1D5D9DE8008A9B0D /* XFCompViewController.xib */; };
+		BD1EE6211D5DA168008A9B0D /* XFCompTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */; };
+		BD1EE6231D5DA997008A9B0D /* XFCompTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */; };
 		BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */; };
 		BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */; };
 		BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */; };
@@ -80,6 +84,10 @@
 		9CE6B92A890AF38E52230492 /* Pods-XFWeiboSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwift/Pods-XFWeiboSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		B4A97F133EE8F23344764490 /* Pods-XFWeiboSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XFWeiboSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XFWeiboSwiftTests/Pods-XFWeiboSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD0B4CA71D5B168B0077593A /* XFUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFUserAccount.swift; sourceTree = "<group>"; };
+		BD1EE61C1D5D9DE8008A9B0D /* XFCompViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCompViewController.swift; sourceTree = "<group>"; };
+		BD1EE61D1D5D9DE8008A9B0D /* XFCompViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFCompViewController.xib; sourceTree = "<group>"; };
+		BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCompTitleView.swift; sourceTree = "<group>"; };
+		BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCompTextView.swift; sourceTree = "<group>"; };
 		BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopAnimator.swift; sourceTree = "<group>"; };
 		BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFNetWorkTools.swift; sourceTree = "<group>"; };
 		BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFOAuthViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +186,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BD1EE61B1D5D9D4A008A9B0D /* Compose (发布) */ = {
+			isa = PBXGroup;
+			children = (
+				BD1EE61C1D5D9DE8008A9B0D /* XFCompViewController.swift */,
+				BD1EE61D1D5D9DE8008A9B0D /* XFCompViewController.xib */,
+				BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */,
+				BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */,
+			);
+			path = "Compose (发布)";
+			sourceTree = "<group>";
+		};
 		BD3E34451D5AFCEA0088B23F /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +291,7 @@
 		BDB46A9B1D54994100BF8829 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BD1EE61B1D5D9D4A008A9B0D /* Compose (发布) */,
 				BDB46A9E1D54994100BF8829 /* Main */,
 				BDB46A9D1D54994100BF8829 /* Home (首页) */,
 				BDB46A9F1D54994100BF8829 /* Message (消息) */,
@@ -499,6 +519,7 @@
 				BDD22B341D559F09007A86F8 /* XFMsg.storyboard in Resources */,
 				BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */,
 				BDD22B3D1D55A033007A86F8 /* Main.storyboard in Resources */,
+				BD1EE61F1D5D9DE9008A9B0D /* XFCompViewController.xib in Resources */,
 				BDD22B361D559F47007A86F8 /* XFProfile.storyboard in Resources */,
 				BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */,
 			);
@@ -667,7 +688,10 @@
 				BD54E2F71D5C3547003D79F2 /* NSDate-Extension.swift in Sources */,
 				BDF46B9D1D5C736A003F2D75 /* XFPicCollectionView.swift in Sources */,
 				BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */,
+				BD1EE6231D5DA997008A9B0D /* XFCompTextView.swift in Sources */,
 				BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */,
+				BD1EE6211D5DA168008A9B0D /* XFCompTitleView.swift in Sources */,
+				BD1EE61E1D5D9DE9008A9B0D /* XFCompViewController.swift in Sources */,
 				BD54E2D31D5C20FB003D79F2 /* XFHomeViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
 				BD54E2FB1D5C3D3E003D79F2 /* XFStatusViewModel.swift in Sources */,

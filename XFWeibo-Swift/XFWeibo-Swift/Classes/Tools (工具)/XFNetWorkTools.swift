@@ -20,6 +20,7 @@ class XFNetWorkTools: AFHTTPSessionManager {
     // let 是线程安全的
     static let shareInstance : XFNetWorkTools = {
         let tools = XFNetWorkTools()
+        
         tools.responseSerializer.acceptableContentTypes?.insert("text/html")
         tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
         

@@ -44,7 +44,11 @@ extension XFMainViewController {
 extension XFMainViewController {
     @objc private func composeBtnClick() {
         
-        XFLog("点击发布微博按钮")
+        let compVc = XFCompViewController()
+        
+        let nav = UINavigationController(rootViewController: compVc)
+        
+        presentViewController(nav, animated: true, completion: nil)
     }
 }
 
