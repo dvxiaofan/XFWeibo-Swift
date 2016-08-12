@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 
 class XFHomeViewController: XFBaseViewController {
     
@@ -37,13 +38,17 @@ class XFHomeViewController: XFBaseViewController {
         setupNavBar()
         
         // 请求数据
-        loadHomeStatuses()
+        //loadHomeStatuses()
         
         // 设置估算高度
         tableView.estimatedRowHeight = 200
         
+        // 设置下拉刷新
+        setupHeaderView()
+        
+        // 设置上来加载更多
+        setupFooterView()
     }
-
 }
 
 // MARK:- 设置界面
@@ -63,7 +68,33 @@ extension XFHomeViewController {
         navigationItem.titleView = titleBtn
     }
     
+    // MARK:- 设置 headerview
+    private func setupHeaderView() {
+        // 下拉刷新 headerview
+        let headerView = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadNewStatuses")
+        
+        // 设置属性
+        headerView.setTitle("下拉刷新", forState: .Idle)
+        headerView.setTitle("释放更新", forState: .Pulling)
+        headerView.setTitle("加载中...", forState: .Refreshing)
+        headerView.lastUpdatedTimeLabel?.hidden = true
+        
+        // 设置 tableView 的 headerView
+        tableView.mj_header = headerView
+        
+        // 进入刷新
+        tableView.mj_header.beginRefreshing()
+    }
     
+    // MARK:- 设置 footerveiw
+    private func setupFooterView() {
+        let footerView = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "loadMoreStatuses");
+        footerView.setTitle("加载中...", forState: .Refreshing)
+        footerView.automaticallyHidden = true
+        
+        tableView.mj_footer = footerView
+        
+    }
 }
 
 // MARK:- 事件监听
@@ -97,8 +128,31 @@ extension XFHomeViewController {
 
 // MARK:- 请求数据
 extension XFHomeViewController {
-    private func loadHomeStatuses() {
-        XFNetWorkTools.shareInstance.loadHomeStatuses { (result, error) -> () in
+    /// 加载最新数据
+    @objc private func loadNewStatuses() {
+        loadHomeStatuses(true)
+    }
+    
+    // MARK:- 加载更多数据
+    @objc private func loadMoreStatuses() {
+        loadHomeStatuses(false)
+    }
+    
+    /// 加载微博数据
+    private func loadHomeStatuses(isNewData : Bool) {
+        
+        // 获取 since_id
+        var since_id = 0
+        var max_id = 0
+        if isNewData {
+            since_id = viewModels.first?.status?.mid ?? 0
+        } else {
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
+        }
+        
+        // 请求数据
+        XFNetWorkTools.shareInstance.loadHomeStatuses(since_id, max_id: max_id) { (result, error) -> () in
             // 错误校验
             if error != nil {
                 XFLog(error)
@@ -109,17 +163,28 @@ extension XFHomeViewController {
             guard let resultArray = result else {
                 return
             }
+            
+            // 定义临时数组
+            var tempViewModel = [XFStatusViewModel]()
             // 遍历数组对应的字典
             for statusDict in resultArray {
                 // 字典数据转模型
                 let status = XFHomeStatus(dict: statusDict)
                 
                 let viewModel = XFStatusViewModel(status: status)
-                self.viewModels.append(viewModel)
+                // 先将数据加入到临时数组中
+                tempViewModel.append(viewModel)
+            }
+            
+            // 将数据放入到成员变量数组中
+            if isNewData {
+                self.viewModels = tempViewModel + self.viewModels
+            } else {
+                self.viewModels += tempViewModel
             }
             
             // 缓存图片
-            self.cacheImages(self.viewModels)
+            self.cacheImages(tempViewModel)
         }
     }
     
@@ -142,8 +207,11 @@ extension XFHomeViewController {
         // 刷新表格
         dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
+    
 }
 
 // MARK:- tableview 数据源方法

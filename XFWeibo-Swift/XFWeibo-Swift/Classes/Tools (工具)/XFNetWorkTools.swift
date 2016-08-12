@@ -85,11 +85,11 @@ extension XFNetWorkTools {
 
 // MARK:- 请求主页数据
 extension XFNetWorkTools {
-    func loadHomeStatuses(finished : (result : [[String : AnyObject]]?, error : NSError?) -> ()) {
+    func loadHomeStatuses(since_id : Int, max_id : Int, finished : (result : [[String : AnyObject]]?, error : NSError?) -> ()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        
-        let parameters = ["access_token" : (XFUserAccountTool.shareInstance.account?.access_token)!]
+        let access_token = (XFUserAccountTool.shareInstance.account?.access_token)!
+        let parameters = ["access_token" : access_token, "since_id" : "\(since_id)", "max_id" : "\(max_id)"]
         
         requestData(methodType: .GET, urlString: urlString, parameters: parameters) { (result, error) -> () in
             // 数据转字典

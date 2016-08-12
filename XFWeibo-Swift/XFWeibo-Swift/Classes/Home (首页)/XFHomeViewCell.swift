@@ -63,7 +63,11 @@ class XFHomeViewCell: UITableViewCell {
             createAtLabel.text = viewModel.createdAtText
             
             // 7.来源
-            sourceLabel.text = viewModel.sourceText
+            if let sourceText = viewModel.sourceText {
+                sourceLabel.text = "来自" + sourceText
+            } else {
+                sourceLabel.text = nil
+            }
             
             // 8.正文
             contentLabel.text = viewModel.status?.text
