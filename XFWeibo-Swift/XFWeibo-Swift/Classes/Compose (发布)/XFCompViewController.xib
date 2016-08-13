@@ -27,9 +27,21 @@
                         <outlet property="delegate" destination="-1" id="eeR-js-s2z"/>
                     </connections>
                 </textView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jj0-5r-teB" userLabel="选择图片" customClass="XFPicPickerCollectionView" customModule="XFWeiboSwift" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="YAR-OZ-IIb"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QVY-PD-SAR">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VQ-5x-reB" userLabel="工具栏">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="f0k-RB-XRM"/>
                     </constraints>
@@ -85,25 +97,23 @@
                         </barButtonItem>
                         <barButtonItem enabled="NO" title="   " id="dir-Jo-5tf" userLabel="右占位"/>
                     </items>
+                    <color key="barTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jj0-5r-teB" userLabel="选择图片" customClass="XFPicPickerCollectionView" customModule="XFWeiboSwift" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-7c-4na" userLabel="分割线">
+                    <rect key="frame" x="0.0" y="622" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" id="YAR-OZ-IIb"/>
+                        <constraint firstAttribute="height" constant="1" id="ShD-kh-79v"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QVY-PD-SAR">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="1VQ-5x-reB" firstAttribute="top" secondItem="8I5-7c-4na" secondAttribute="bottom" id="1c0-LH-SeB"/>
+                <constraint firstAttribute="trailing" secondItem="8I5-7c-4na" secondAttribute="trailing" id="2Yb-zQ-XOW"/>
                 <constraint firstItem="1VQ-5x-reB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CkX-kC-3K2"/>
                 <constraint firstAttribute="trailing" secondItem="Jj0-5r-teB" secondAttribute="trailing" id="Fnf-Ry-VRA"/>
+                <constraint firstItem="8I5-7c-4na" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Paa-O9-zmL"/>
                 <constraint firstAttribute="trailing" secondItem="1VQ-5x-reB" secondAttribute="trailing" id="Ubg-EO-jvI"/>
                 <constraint firstAttribute="bottom" secondItem="Jj0-5r-teB" secondAttribute="bottom" id="Y9k-k0-ad0"/>
                 <constraint firstAttribute="trailing" secondItem="BIS-oJ-ThQ" secondAttribute="trailing" id="ZLa-Fv-2QM"/>

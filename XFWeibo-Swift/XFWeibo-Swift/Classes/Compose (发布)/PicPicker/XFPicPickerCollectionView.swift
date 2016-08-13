@@ -40,7 +40,7 @@ class XFPicPickerCollectionView: UICollectionView {
     }
 }
 
-// MARK: - UICollectionViewDataSource
+// MARK: - UICollectionView数据源
 extension XFPicPickerCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count + 1
