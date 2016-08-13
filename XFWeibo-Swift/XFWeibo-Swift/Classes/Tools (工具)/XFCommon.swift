@@ -14,8 +14,11 @@ let app_Key = "3457562873"
 let app_Secret = "f9c67b08304e08c69a853a203c71c126"
 let redirect_uri = "http://devxiaofan.com"
 
+// MARK:- 屏幕尺寸
 let screenSize = UIScreen.mainScreen().bounds
 
+// MARK:- 选择图片通知
+let XFPickerAddPhotoNote = "XFPickerAddPhotoNote"
 
 
 

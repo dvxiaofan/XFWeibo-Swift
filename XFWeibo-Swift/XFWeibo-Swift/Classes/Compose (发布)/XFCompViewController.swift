@@ -29,7 +29,7 @@ class XFCompViewController: UIViewController {
         setupNavBar()
         
         // 监听通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        setupNotifications()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -55,6 +55,14 @@ extension XFCompViewController {
         
         navigationItem.titleView = titleView
         titleView.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
+    }
+    
+    /// 监听通知
+    private func setupNotifications() {
+        // 键盘通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        // 增加照片通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pickerAddPhoto", name: XFPickerAddPhotoNote, object: nil)
     }
     
 }
@@ -88,11 +96,9 @@ extension XFCompViewController {
         UIView.animateWithDuration(duration) { () -> Void in
             self.view.layoutIfNeeded()
         }
-        
-        
     }
     
-    /// 选择图片
+    /// 选择图片界面弹出
     @IBAction func picPickerClick(sender: AnyObject) {
         // 退出键盘
         textView.resignFirstResponder()
@@ -103,22 +109,56 @@ extension XFCompViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
-    
 }
 
-// MARK: - 代理事件
-extension XFCompViewController : UITextViewDelegate {
+// MARK:- 添加和删除照片
+extension XFCompViewController {
+    /// 添加照片
+    @objc private func pickerAddPhoto() {
+        // 1. 判断照片源是否可用
+        if !UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+            return
+        }
+        
+        // 2. 创建照片选择控制器
+        let imgPicController = UIImagePickerController()
+        
+        // 3. 设置照片源
+        imgPicController.sourceType = .PhotoLibrary
+        
+        // 4. 设置代理
+        imgPicController.delegate = self
+        
+        // 5. 弹出控制器
+        presentViewController(imgPicController, animated: true, completion: nil)
+        
+    }
+}
+
+// MARK: - 选择图片代理
+extension XFCompViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // 获得选中图片
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // 展示图片
+        
+        
+    }
+}
+
+// MARK: - textView代理事件
+extension XFCompViewController : UITextViewDelegate {
+    /// textView开始编辑
     func textViewDidChange(textView: UITextView) {
         self.textView.placeHolderLabel.hidden = textView.hasText()
         navigationItem.rightBarButtonItem?.enabled = textView.hasText()
         navigationItem.rightBarButtonItem?.tintColor = UIColor.orangeColor()
     }
-    
+    /// 滚动textView
     func scrollViewDidScroll(scrollView: UIScrollView) {
         textView.resignFirstResponder()
-        
     }
 }
 

@@ -14,6 +14,8 @@
 		BD1EE6211D5DA168008A9B0D /* XFCompTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */; };
 		BD1EE6231D5DA997008A9B0D /* XFCompTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */; };
 		BD2E762C1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */; };
+		BD2E762F1D5ECEDB0096ABD6 /* XFPicPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E762D1D5ECEDB0096ABD6 /* XFPicPickerCell.swift */; };
+		BD2E76301D5ECEDB0096ABD6 /* XFPicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2E762E1D5ECEDB0096ABD6 /* XFPicPickerCell.xib */; };
 		BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */; };
 		BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */; };
 		BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */; };
@@ -90,6 +92,8 @@
 		BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCompTitleView.swift; sourceTree = "<group>"; };
 		BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCompTextView.swift; sourceTree = "<group>"; };
 		BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPicPickerCollectionView.swift; sourceTree = "<group>"; };
+		BD2E762D1D5ECEDB0096ABD6 /* XFPicPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPicPickerCell.swift; sourceTree = "<group>"; };
+		BD2E762E1D5ECEDB0096ABD6 /* XFPicPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPicPickerCell.xib; sourceTree = "<group>"; };
 		BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopAnimator.swift; sourceTree = "<group>"; };
 		BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFNetWorkTools.swift; sourceTree = "<group>"; };
 		BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFOAuthViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */,
+				BD2E762D1D5ECEDB0096ABD6 /* XFPicPickerCell.swift */,
+				BD2E762E1D5ECEDB0096ABD6 /* XFPicPickerCell.xib */,
 			);
 			path = PicPicker;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 				BDD22B341D559F09007A86F8 /* XFMsg.storyboard in Resources */,
 				BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */,
 				BDD22B3D1D55A033007A86F8 /* Main.storyboard in Resources */,
+				BD2E76301D5ECEDB0096ABD6 /* XFPicPickerCell.xib in Resources */,
 				BD1EE61F1D5D9DE9008A9B0D /* XFCompViewController.xib in Resources */,
 				BDD22B361D559F47007A86F8 /* XFProfile.storyboard in Resources */,
 				BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */,
@@ -703,6 +710,7 @@
 				BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */,
 				BD1EE6211D5DA168008A9B0D /* XFCompTitleView.swift in Sources */,
 				BD1EE61E1D5D9DE9008A9B0D /* XFCompViewController.swift in Sources */,
+				BD2E762F1D5ECEDB0096ABD6 /* XFPicPickerCell.swift in Sources */,
 				BD54E2D31D5C20FB003D79F2 /* XFHomeViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
 				BD54E2FB1D5C3D3E003D79F2 /* XFStatusViewModel.swift in Sources */,

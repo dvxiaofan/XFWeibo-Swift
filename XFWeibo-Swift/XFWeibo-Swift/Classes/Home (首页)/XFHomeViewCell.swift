@@ -168,7 +168,7 @@ extension XFHomeViewCell {
         
         // 6. 四张图
         if count == 4 {
-            let picViewWH = imageViewWH * 2 + picMargin
+            let picViewWH = imageViewWH * 2 + picMargin + 1
             return CGSize(width: picViewWH, height: picViewWH)
         }
         

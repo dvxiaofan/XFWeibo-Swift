@@ -24,7 +24,7 @@ class XFPicPickerCollectionView: UICollectionView {
         layout.minimumInteritemSpacing = margin
         
         // 设置属性
-        registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: XFPicPickerCellID)
+        registerNib(UINib(nibName: "XFPicPickerCell", bundle: nil), forCellWithReuseIdentifier: XFPicPickerCellID)
         
         dataSource = self
         
@@ -44,7 +44,7 @@ extension XFPicPickerCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(XFPicPickerCellID, forIndexPath: indexPath)
         
-        cell.backgroundColor = UIColor.orangeColor()
+        //cell.backgroundColor = UIColor.whiteColor()
         
         return cell
     }

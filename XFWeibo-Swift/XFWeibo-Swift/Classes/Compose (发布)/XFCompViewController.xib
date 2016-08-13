@@ -86,6 +86,7 @@
                 </toolbar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jj0-5r-teB" userLabel="选择图片" customClass="XFPicPickerCollectionView" customModule="XFWeiboSwift" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" id="YAR-OZ-IIb"/>
                     </constraints>
