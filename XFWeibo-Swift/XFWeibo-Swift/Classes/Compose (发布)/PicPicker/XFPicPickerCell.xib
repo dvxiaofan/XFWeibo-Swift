@@ -20,6 +20,9 @@
                             <action selector="addPicClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="f3n-Vm-cW5"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-FF-xO2" userLabel="显示图片">
+                        <rect key="frame" x="0.0" y="0.0" width="242" height="223"/>
+                    </imageView>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9y-Po-5wL" userLabel="删除">
                         <rect key="frame" x="218" y="0.0" width="24" height="24"/>
                         <constraints>
@@ -35,14 +38,23 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstItem="UCW-FF-xO2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="01s-yh-Bcm"/>
                 <constraint firstItem="a9y-Po-5wL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8TJ-rv-jtl"/>
+                <constraint firstItem="UCW-FF-xO2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8eK-0Z-E1E"/>
                 <constraint firstItem="3yj-N7-gw8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="92m-t0-pRx"/>
                 <constraint firstAttribute="bottom" secondItem="3yj-N7-gw8" secondAttribute="bottom" id="CuP-id-qj9"/>
                 <constraint firstAttribute="trailing" secondItem="a9y-Po-5wL" secondAttribute="trailing" id="L98-ge-g9N"/>
+                <constraint firstAttribute="trailing" secondItem="UCW-FF-xO2" secondAttribute="trailing" id="OFP-RQ-16M"/>
                 <constraint firstAttribute="trailing" secondItem="3yj-N7-gw8" secondAttribute="trailing" id="dnr-Zx-CDb"/>
+                <constraint firstAttribute="bottom" secondItem="UCW-FF-xO2" secondAttribute="bottom" id="jLe-Jl-Yri"/>
                 <constraint firstItem="3yj-N7-gw8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="w9J-03-XzS"/>
             </constraints>
             <size key="customSize" width="242" height="223"/>
+            <connections>
+                <outlet property="addPhotoBtn" destination="3yj-N7-gw8" id="gzl-Cs-gTY"/>
+                <outlet property="deletedBtn" destination="a9y-Po-5wL" id="9Hy-0h-tyG"/>
+                <outlet property="imageView" destination="UCW-FF-xO2" id="0Kb-u9-lDy"/>
+            </connections>
             <point key="canvasLocation" x="236" y="325.5"/>
         </collectionViewCell>
     </objects>

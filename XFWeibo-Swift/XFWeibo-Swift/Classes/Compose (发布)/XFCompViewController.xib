@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XFCompViewController" customModule="XFWeiboSwift" customModuleProvider="target">
             <connections>
+                <outlet property="picPickerView" destination="Jj0-5r-teB" id="3QG-if-cP1"/>
                 <outlet property="pickerViewHeightCons" destination="YAR-OZ-IIb" id="4FH-qZ-5I5"/>
                 <outlet property="textView" destination="BIS-oJ-ThQ" id="FlR-oR-AdE"/>
                 <outlet property="toolBottomCons" destination="xMD-9s-Zf5" id="JKj-A2-xS8"/>
@@ -28,6 +29,7 @@
                 </textView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VQ-5x-reB" userLabel="工具栏">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="f0k-RB-XRM"/>
                     </constraints>

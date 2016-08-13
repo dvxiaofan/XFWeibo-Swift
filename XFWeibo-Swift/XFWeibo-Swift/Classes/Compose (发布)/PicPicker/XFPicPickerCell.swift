@@ -11,7 +11,24 @@ import UIKit
 class XFPicPickerCell: UICollectionViewCell {
     
     // MARK:- 拖线属性
-
+    @IBOutlet weak var addPhotoBtn: UIButton!
+    @IBOutlet weak var deletedBtn: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    // MARK:- 定义属性
+    var image : UIImage? {
+        didSet {
+            if image != nil {
+                imageView.image = image
+                addPhotoBtn.userInteractionEnabled = false
+                deletedBtn.hidden = false
+            } else {
+                imageView.image = nil   // 防止循环引用
+                addPhotoBtn.userInteractionEnabled = true
+                deletedBtn.hidden = true
+            }
+        }
+    }
     
     // MARK:- 事件监听
     @IBAction func addPicClick(sender: AnyObject) {
@@ -20,8 +37,6 @@ class XFPicPickerCell: UICollectionViewCell {
     }
     
     @IBAction func deletedClick(sender: AnyObject) {
-        XFLog("deleted")
+        NSNotificationCenter.defaultCenter().postNotificationName(XFPickerDeletedPhotoNote, object: imageView.image)
     }
-    
-
 }

@@ -12,6 +12,7 @@ class XFCompViewController: UIViewController {
     
     // MARK:- 拖线属性
     @IBOutlet weak var textView: XFCompTextView!
+    @IBOutlet weak var picPickerView: XFPicPickerCollectionView!
     
     // MARK:- 约束属性
     @IBOutlet weak var toolBottomCons: NSLayoutConstraint!
@@ -20,6 +21,7 @@ class XFCompViewController: UIViewController {
     
     // MARK:- 懒加载
     private lazy var titleView : XFCompTitleView = XFCompTitleView()
+    private lazy var images : [UIImage] = [UIImage]()
 
     // MARK:- 系统回调
     override func viewDidLoad() {
@@ -37,6 +39,7 @@ class XFCompViewController: UIViewController {
         textView.becomeFirstResponder()
     }
     
+    // 移除通知
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
@@ -63,6 +66,8 @@ extension XFCompViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
         // 增加照片通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "pickerAddPhoto", name: XFPickerAddPhotoNote, object: nil)
+        // 移除已选择照片
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pickerDeletedPhoto:", name: XFPickerDeletedPhotoNote, object: nil)
     }
     
 }
@@ -104,7 +109,7 @@ extension XFCompViewController {
         textView.resignFirstResponder()
         
         // 执行动画
-        pickerViewHeightCons.constant = screenSize.height * 0.6
+        pickerViewHeightCons.constant = screenSize.height * 0.65
         UIView.animateWithDuration(0.25) { () -> Void in
             self.view.layoutIfNeeded()
         }
@@ -133,6 +138,22 @@ extension XFCompViewController {
         presentViewController(imgPicController, animated: true, completion: nil)
         
     }
+    
+    /// 删除已选照片
+    @objc private func pickerDeletedPhoto(note : NSNotification) {
+        // 拿到要删除的图片
+        guard let image = note.object as? UIImage else {
+            return
+        }
+        // 拿到图片下标
+        guard let index = images.indexOf(image) else {
+            return
+        }
+        // 删除图片
+        images.removeAtIndex(index)
+        // 重新赋值数组
+        picPickerView.images = images
+    }
 }
 
 // MARK: - 选择图片代理
@@ -142,9 +163,14 @@ extension XFCompViewController : UIImagePickerControllerDelegate, UINavigationCo
         // 获得选中图片
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        // 展示图片
+        // 添加到数组中
+        images.append(image)
         
+        // 讲数组赋值给 collection
+        picPickerView.images = images
         
+        // 退出
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

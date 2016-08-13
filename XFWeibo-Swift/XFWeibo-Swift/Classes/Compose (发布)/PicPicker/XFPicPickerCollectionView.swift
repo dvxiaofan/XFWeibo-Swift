@@ -12,6 +12,13 @@ private let XFPicPickerCellID = "picPickerCell"
 private let margin : CGFloat = 15
 
 class XFPicPickerCollectionView: UICollectionView {
+    
+    // MARK:- 定义属性
+    var images : [UIImage] = [UIImage]() {
+        didSet {
+            reloadData()
+        }
+    }
 
     // MARK:- 系统回调
     override func awakeFromNib() {
@@ -30,21 +37,19 @@ class XFPicPickerCollectionView: UICollectionView {
         
         // 设置内边距
         contentInset = UIEdgeInsets(top: margin, left: margin, bottom: 0, right: margin)
-        
     }
-
 }
 
 // MARK: - UICollectionViewDataSource
 extension XFPicPickerCollectionView : UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return images.count + 1
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(XFPicPickerCellID, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(XFPicPickerCellID, forIndexPath: indexPath) as! XFPicPickerCell
         
-        //cell.backgroundColor = UIColor.whiteColor()
+        cell.image = indexPath.item <= images.count - 1 ? images[indexPath.item] : nil
         
         return cell
     }

@@ -19,6 +19,7 @@ let screenSize = UIScreen.mainScreen().bounds
 
 // MARK:- 选择图片通知
 let XFPickerAddPhotoNote = "XFPickerAddPhotoNote"
+let XFPickerDeletedPhotoNote = "XFPickerDeletedPhotoNote"
 
 
 
