@@ -39,7 +39,7 @@ class XFHomeViewController: XFBaseViewController {
         setupNavBar()
         
         // 请求数据
-        //loadHomeStatuses()
+        //loadHomeStatuses(true)
         
         // 设置估算高度
         tableView.estimatedRowHeight = 200
@@ -175,6 +175,7 @@ extension XFHomeViewController {
             
             // 获取可选类型中的数组
             guard let resultArray = result else {
+                
                 return
             }
             

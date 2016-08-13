@@ -13,6 +13,7 @@
 		BD1EE61F1D5D9DE9008A9B0D /* XFCompViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1EE61D1D5D9DE8008A9B0D /* XFCompViewController.xib */; };
 		BD1EE6211D5DA168008A9B0D /* XFCompTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */; };
 		BD1EE6231D5DA997008A9B0D /* XFCompTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */; };
+		BD2E762C1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */; };
 		BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */; };
 		BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */; };
 		BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */; };
@@ -88,6 +89,7 @@
 		BD1EE61D1D5D9DE8008A9B0D /* XFCompViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFCompViewController.xib; sourceTree = "<group>"; };
 		BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCompTitleView.swift; sourceTree = "<group>"; };
 		BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFCompTextView.swift; sourceTree = "<group>"; };
+		BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPicPickerCollectionView.swift; sourceTree = "<group>"; };
 		BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopAnimator.swift; sourceTree = "<group>"; };
 		BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFNetWorkTools.swift; sourceTree = "<group>"; };
 		BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFOAuthViewController.swift; sourceTree = "<group>"; };
@@ -189,12 +191,21 @@
 		BD1EE61B1D5D9D4A008A9B0D /* Compose (发布) */ = {
 			isa = PBXGroup;
 			children = (
+				BD2E762A1D5EC8340096ABD6 /* PicPicker */,
 				BD1EE61C1D5D9DE8008A9B0D /* XFCompViewController.swift */,
 				BD1EE61D1D5D9DE8008A9B0D /* XFCompViewController.xib */,
 				BD1EE6201D5DA168008A9B0D /* XFCompTitleView.swift */,
 				BD1EE6221D5DA997008A9B0D /* XFCompTextView.swift */,
 			);
 			path = "Compose (发布)";
+			sourceTree = "<group>";
+		};
+		BD2E762A1D5EC8340096ABD6 /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */,
+			);
+			path = PicPicker;
 			sourceTree = "<group>";
 		};
 		BD3E34451D5AFCEA0088B23F /* OAuth(授权) */ = {
@@ -714,6 +725,7 @@
 				BD54E2FD1D5C48DF003D79F2 /* XFHomeViewCell.swift in Sources */,
 				BDD22B451D55B959007A86F8 /* XFDefineFile.swift in Sources */,
 				BD4A292B1D5B2F63009F67B9 /* XFUserAccountTool.swift in Sources */,
+				BD2E762C1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +853,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dvxiaofan.XFWeibo-Swift";
 				PRODUCT_NAME = XFWeiboSwift;
 			};
@@ -855,6 +868,7 @@
 				INFOPLIST_FILE = "XFWeibo-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dvxiaofan.XFWeibo-Swift";
 				PRODUCT_NAME = XFWeiboSwift;
 			};

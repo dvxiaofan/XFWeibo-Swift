@@ -7,9 +7,9 @@ target 'XFWeiboSwift' do
 
 pod 'AFNetworking'
 pod 'SDWebImage'
-#pod 'SnapKit'
 pod 'SVProgressHUD'
 pod 'MJRefresh'
+#pod 'SnapKit'
 
 
   # Pods for XFWeiboSwift

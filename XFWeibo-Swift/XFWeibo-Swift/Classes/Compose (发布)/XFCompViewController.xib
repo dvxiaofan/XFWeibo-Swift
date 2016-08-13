@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XFCompViewController" customModule="XFWeiboSwift" customModuleProvider="target">
             <connections>
+                <outlet property="pickerViewHeightCons" destination="YAR-OZ-IIb" id="4FH-qZ-5I5"/>
+                <outlet property="textView" destination="BIS-oJ-ThQ" id="FlR-oR-AdE"/>
+                <outlet property="toolBottomCons" destination="xMD-9s-Zf5" id="JKj-A2-xS8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,22 +17,113 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BIS-oJ-ThQ" userLabel="输入框" customClass="XFCompTextView" customModule="XFWeiboSwift" customModuleProvider="target">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BIS-oJ-ThQ" userLabel="输入框" customClass="XFCompTextView" customModule="XFWeiboSwift" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="eeR-js-s2z"/>
+                    </connections>
                 </textView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VQ-5x-reB" userLabel="工具栏">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="f0k-RB-XRM"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem enabled="NO" title="   " id="bLC-QW-g9K" userLabel="左占位"/>
+                        <barButtonItem style="plain" id="IJY-2N-OLi" userLabel="插入图片">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GqS-S5-P9O">
+                                <rect key="frame" x="32" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="compose_toolbar_picture"/>
+                                <state key="highlighted" image="compose_toolbar_picture_highlighted"/>
+                                <connections>
+                                    <action selector="picPickerClick:" destination="-1" eventType="touchUpInside" id="Eu9-av-7mL"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="llm-gv-iIr"/>
+                        <barButtonItem style="plain" id="iLF-hH-Lpj" userLabel="@谁">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CfL-io-LaH">
+                                <rect key="frame" x="102" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="compose_mentionbutton_background"/>
+                                <state key="highlighted" image="compose_mentionbutton_background_highlighted"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sft-zZ-Vzi"/>
+                        <barButtonItem style="plain" id="UDD-iH-7uv" userLabel="#话题">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xfQ-sS-7ds">
+                                <rect key="frame" x="173" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="compose_trendbutton_background"/>
+                                <state key="highlighted" image="compose_trendbutton_background_highlighted"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="GBZ-N3-y1L"/>
+                        <barButtonItem style="plain" id="mMx-SB-hS4" userLabel="表情">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GPI-9n-yIB">
+                                <rect key="frame" x="243" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="compose_emoticonbutton_background"/>
+                                <state key="selected" image="compose_keyboardbutton_background"/>
+                                <state key="highlighted" image="compose_emoticonbutton_background_highlighted"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ZNW-GD-06J"/>
+                        <barButtonItem style="plain" id="Ngs-EM-AUv" userLabel="添加">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qTs-2Y-nyC">
+                                <rect key="frame" x="313" y="5" width="30" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="compose_pic_add_highlighted"/>
+                                <state key="selected" image="compose_keyboardbutton_background"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem enabled="NO" title="   " id="dir-Jo-5tf" userLabel="右占位"/>
+                    </items>
+                </toolbar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jj0-5r-teB" userLabel="选择图片" customClass="XFPicPickerCollectionView" customModule="XFWeiboSwift" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="YAR-OZ-IIb"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QVY-PD-SAR">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="1VQ-5x-reB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CkX-kC-3K2"/>
+                <constraint firstAttribute="trailing" secondItem="Jj0-5r-teB" secondAttribute="trailing" id="Fnf-Ry-VRA"/>
+                <constraint firstAttribute="trailing" secondItem="1VQ-5x-reB" secondAttribute="trailing" id="Ubg-EO-jvI"/>
+                <constraint firstAttribute="bottom" secondItem="Jj0-5r-teB" secondAttribute="bottom" id="Y9k-k0-ad0"/>
                 <constraint firstAttribute="trailing" secondItem="BIS-oJ-ThQ" secondAttribute="trailing" id="ZLa-Fv-2QM"/>
                 <constraint firstAttribute="bottom" secondItem="BIS-oJ-ThQ" secondAttribute="bottom" id="dSs-aY-lI8"/>
                 <constraint firstItem="BIS-oJ-ThQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ns6-QE-ZqM"/>
                 <constraint firstItem="BIS-oJ-ThQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sAo-X8-lVB"/>
+                <constraint firstAttribute="bottom" secondItem="1VQ-5x-reB" secondAttribute="bottom" id="xMD-9s-Zf5"/>
+                <constraint firstItem="Jj0-5r-teB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zv1-0s-ZNN"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="425.5" y="397.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_keyboardbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background_highlighted" width="24" height="24"/>
+        <image name="compose_pic_add_highlighted" width="24" height="24"/>
+        <image name="compose_toolbar_picture" width="24" height="24"/>
+        <image name="compose_toolbar_picture_highlighted" width="24" height="24"/>
+        <image name="compose_trendbutton_background" width="24" height="24"/>
+        <image name="compose_trendbutton_background_highlighted" width="24" height="24"/>
+    </resources>
 </document>

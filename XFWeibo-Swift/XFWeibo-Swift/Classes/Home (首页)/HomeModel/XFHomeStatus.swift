@@ -21,7 +21,7 @@ class XFHomeStatus: NSObject {
     var attitudes_count : Int = 0           // 点赞数
     var pic_urls : [[String : String]]?     // 配图
     var retweeted_status : XFHomeStatus?    // 转发微博
-    
+
     //var test : Int = 0
     
     // MARK:- 自定义构造函数

@@ -11,7 +11,7 @@ import UIKit
 class XFCompTextView: UITextView {
     
     // MARK:- 懒加载
-    private lazy var placeHolderLabel : UILabel = UILabel()
+    lazy var placeHolderLabel : UILabel = UILabel()
 
     // MARK:- 添加子控件一般用这个方法
     required init?(coder aDecoder: NSCoder) {
