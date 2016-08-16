@@ -22,12 +22,13 @@ class XFPicCollectionView: UICollectionView {
         super.awakeFromNib()
         
         dataSource = self
+        delegate = self
     }
 
 }
 
-// MARK: - UICollectionViewDataSource
-extension XFPicCollectionView : UICollectionViewDataSource{
+// MARK: - UICollectionView数据源和代理
+extension XFPicCollectionView : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picURLs.count
@@ -41,6 +42,13 @@ extension XFPicCollectionView : UICollectionViewDataSource{
         cell.picURL = picURLs[indexPath.item]
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // 获取通知需要传递的啊参数
+        let userInfo = [XFShowBigPhtotIndexKey : indexPath, XFShowBigPhtotURLsKey : picURLs]
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(XFShowBigPhtotNote, object: nil, userInfo: userInfo)
     }
 }
 

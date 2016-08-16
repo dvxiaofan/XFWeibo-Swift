@@ -38,9 +38,6 @@ class XFHomeViewController: XFBaseViewController {
         // 设置导航栏内容
         setupNavBar()
         
-        // 请求数据
-        //loadHomeStatuses(true)
-        
         // 设置估算高度
         tableView.estimatedRowHeight = 200
         
@@ -52,6 +49,9 @@ class XFHomeViewController: XFBaseViewController {
         
         // 设置提示 label
         setupTipLabel()
+        
+        // 监听通知
+        setupNotifications()
     }
 }
 
@@ -112,13 +112,18 @@ extension XFHomeViewController {
         
         tipLabel.hidden = true
     }
+    
+    /// 注册通知
+    private func setupNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showBigPhtot:", name: XFShowBigPhtotNote, object: nil)
+    }
 }
 
 // MARK:- 事件监听
 extension XFHomeViewController {
-    ///左按钮点击
+    /// 左按钮点击
     
-    ///右按钮点击
+    /// 右按钮点击
     
     ///titleView 点击
     @objc private func titleBtnClick(titleBtn : XFTitleButton) {
@@ -137,6 +142,16 @@ extension XFHomeViewController {
         
         // 4.弹出控制器
         presentViewController(popVc, animated: true, completion: nil)
+    }
+    
+    /// 点击查看大图
+    @objc private func showBigPhtot(note : NSNotification) {
+        let indexPath = note.userInfo![XFShowBigPhtotIndexKey] as! NSIndexPath
+        let picURLs = note.userInfo![XFShowBigPhtotURLsKey] as! [NSURL]
+        
+        let showBigPhotoVc = XFShowBigPhotoController(indexPath: indexPath, picURLs: picURLs)
+        
+        presentViewController(showBigPhotoVc, animated: true, completion: nil)
     }
 }
 
@@ -169,13 +184,11 @@ extension XFHomeViewController {
         XFNetWorkTools.shareInstance.loadHomeStatuses(since_id, max_id: max_id) { (result, error) -> () in
             // 错误校验
             if error != nil {
-                XFLog(error)
                 return
             }
             
             // 获取可选类型中的数组
             guard let resultArray = result else {
-                
                 return
             }
             

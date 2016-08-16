@@ -37,6 +37,7 @@
 		BD6F92F61D62BAD7000BE126 /* XFEmoAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6F92EE1D62BAD7000BE126 /* XFEmoAttachment.swift */; };
 		BD6F92F71D62BAD7000BE126 /* XFEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6F92EF1D62BAD7000BE126 /* XFEmoticonCell.swift */; };
 		BD6F92F81D62BAD7000BE126 /* XFEmoticonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6F92F01D62BAD7000BE126 /* XFEmoticonController.swift */; };
+		BD78FE011D635762007CCA03 /* XFShowBigPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78FE001D635762007CCA03 /* XFShowBigPhotoController.swift */; };
 		BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */; };
 		BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */; };
 		BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */; };
@@ -124,6 +125,7 @@
 		BD6F92EE1D62BAD7000BE126 /* XFEmoAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFEmoAttachment.swift; sourceTree = "<group>"; };
 		BD6F92EF1D62BAD7000BE126 /* XFEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFEmoticonCell.swift; sourceTree = "<group>"; };
 		BD6F92F01D62BAD7000BE126 /* XFEmoticonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFEmoticonController.swift; sourceTree = "<group>"; };
+		BD78FE001D635762007CCA03 /* XFShowBigPhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFShowBigPhotoController.swift; sourceTree = "<group>"; };
 		BD7F74AE1D5615E000F6EC9D /* XFTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFTitleButton.swift; sourceTree = "<group>"; };
 		BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopViewController.swift; sourceTree = "<group>"; };
 		BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPopViewController.xib; sourceTree = "<group>"; };
@@ -277,6 +279,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BD78FDFF1D63573E007CCA03 /* ShowBigPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				BD78FE001D635762007CCA03 /* XFShowBigPhotoController.swift */,
+			);
+			path = ShowBigPhoto;
+			sourceTree = "<group>";
+		};
 		BD7F74B01D561BC500F6EC9D /* UIPopover */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +383,7 @@
 		BDB46A9D1D54994100BF8829 /* Home (首页) */ = {
 			isa = PBXGroup;
 			children = (
+				BD78FDFF1D63573E007CCA03 /* ShowBigPhoto */,
 				BD54E2D01D5C20FB003D79F2 /* XFHome.storyboard */,
 				BD54E2D11D5C20FB003D79F2 /* XFHomeViewController.swift */,
 				BD54E2FC1D5C48DF003D79F2 /* XFHomeViewCell.swift */,
@@ -763,6 +774,7 @@
 				BD54E2FB1D5C3D3E003D79F2 /* XFStatusViewModel.swift in Sources */,
 				BD6F92F31D62BAD7000BE126 /* XFEmoticonManager.swift in Sources */,
 				BD7F74B61D56242000F6EC9D /* XFPresentationController.swift in Sources */,
+				BD78FE011D635762007CCA03 /* XFShowBigPhotoController.swift in Sources */,
 				BD6F92F81D62BAD7000BE126 /* XFEmoticonController.swift in Sources */,
 				BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */,
 				BD7F74AF1D5615E000F6EC9D /* XFTitleButton.swift in Sources */,

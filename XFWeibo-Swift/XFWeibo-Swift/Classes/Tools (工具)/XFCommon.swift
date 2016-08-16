@@ -21,7 +21,10 @@ let screenSize = UIScreen.mainScreen().bounds
 let XFPickerAddPhotoNote = "XFPickerAddPhotoNote"
 let XFPickerDeletedPhotoNote = "XFPickerDeletedPhotoNote"
 
-
+// MARK:- 照片浏览器的通知常量
+let XFShowBigPhtotNote = "XFShowBigPhtotNote"
+let XFShowBigPhtotIndexKey = "XFShowBigPhtotIndexKey"
+let XFShowBigPhtotURLsKey = "XFShowBigPhtotURLsKey"
 
 
 

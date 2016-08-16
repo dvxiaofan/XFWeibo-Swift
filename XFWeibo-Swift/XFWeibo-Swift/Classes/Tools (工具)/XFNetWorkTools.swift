@@ -41,6 +41,7 @@ extension XFNetWorkTools {
         // 2. 定义失败的回调闭包
         let failureCallBack = { (task : NSURLSessionDataTask?, error : NSError) -> Void in
             finished(result: nil, error: error)
+            XFLog("请求数据失败: \(error)")
         }
         
         // 3. 发送网络请求
@@ -65,6 +66,7 @@ extension XFNetWorkTools {
         // 发送请求
         requestData(methodType: .POST, urlString: urlString, parameters: parameters) { (result, error) -> () in
             finished(result: result as? [String : AnyObject], error: error)
+            XFLog("请求AccessToken失败: \(error)")
         }
         
     }
@@ -80,6 +82,7 @@ extension XFNetWorkTools {
         
         requestData(methodType: .GET, urlString: urlString, parameters: parameters) { (result, error) -> () in
             finished(result: result as? [String : AnyObject], error: error)
+            XFLog("请求用户数据失败: \(error)")
         }
     }
 }
@@ -87,14 +90,15 @@ extension XFNetWorkTools {
 // MARK:- 请求主页数据
 extension XFNetWorkTools {
     func loadHomeStatuses(since_id : Int, max_id : Int, finished : (result : [[String : AnyObject]]?, error : NSError?) -> ()) {
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        //let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
+        //let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
         let accessToken = (XFUserAccountTool.shareInstance.account?.access_token)!
         let parameters = ["access_token" : accessToken, "since_id" : "\(since_id)", "max_id" : "\(max_id)"]
         requestData(methodType: .GET, urlString: urlString, parameters: parameters) { (result, error) -> () in
             // 数据转字典
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(result: nil, error: error)
+                XFLog("请求主页数据失败: \(error)")
                 return
             }
             // 将数组数据回调给外界
