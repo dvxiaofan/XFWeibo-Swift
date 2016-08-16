@@ -41,6 +41,7 @@
 		BD7F74B31D561C0200F6EC9D /* XFPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */; };
 		BD7F74B41D561C0200F6EC9D /* XFPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */; };
 		BD7F74B61D56242000F6EC9D /* XFPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7F74B51D56242000F6EC9D /* XFPresentationController.swift */; };
+		BDA2D4781D63132A0039C106 /* XFFindEmoticom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2D4771D63132A0039C106 /* XFFindEmoticom.swift */; };
 		BDADBFFB1D5B66B80064EF28 /* XFWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDADBFF91D5B66B80064EF28 /* XFWelcomeViewController.swift */; };
 		BDADBFFC1D5B66B80064EF28 /* XFWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDADBFFA1D5B66B80064EF28 /* XFWelcomeViewController.xib */; };
 		BDB46A6E1D54933100BF8829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB46A6D1D54933100BF8829 /* AppDelegate.swift */; };
@@ -127,6 +128,7 @@
 		BD7F74B11D561C0200F6EC9D /* XFPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopViewController.swift; sourceTree = "<group>"; };
 		BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPopViewController.xib; sourceTree = "<group>"; };
 		BD7F74B51D56242000F6EC9D /* XFPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPresentationController.swift; sourceTree = "<group>"; };
+		BDA2D4771D63132A0039C106 /* XFFindEmoticom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFFindEmoticom.swift; sourceTree = "<group>"; };
 		BDADBFF91D5B66B80064EF28 /* XFWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFWelcomeViewController.swift; sourceTree = "<group>"; };
 		BDADBFFA1D5B66B80064EF28 /* XFWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFWelcomeViewController.xib; sourceTree = "<group>"; };
 		BDB46A6A1D54933100BF8829 /* XFWeiboSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XFWeiboSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 				BD6F92EE1D62BAD7000BE126 /* XFEmoAttachment.swift */,
 				BD6F92EF1D62BAD7000BE126 /* XFEmoticonCell.swift */,
 				BD6F92F01D62BAD7000BE126 /* XFEmoticonController.swift */,
+				BDA2D4771D63132A0039C106 /* XFFindEmoticom.swift */,
 			);
 			path = Emoticon;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				BD1EE61E1D5D9DE9008A9B0D /* XFCompViewController.swift in Sources */,
 				BD6F92F21D62BAD7000BE126 /* XFEmoticon.swift in Sources */,
 				BD2E762F1D5ECEDB0096ABD6 /* XFPicPickerCell.swift in Sources */,
+				BDA2D4781D63132A0039C106 /* XFFindEmoticom.swift in Sources */,
 				BD54E2D31D5C20FB003D79F2 /* XFHomeViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
 				BD54E2FB1D5C3D3E003D79F2 /* XFStatusViewModel.swift in Sources */,

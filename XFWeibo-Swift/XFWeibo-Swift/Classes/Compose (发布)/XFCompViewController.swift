@@ -99,9 +99,9 @@ extension XFCompViewController {
         // 定义一个回调闭包
         let finishedCallBack = { (isSuccess : Bool) -> () in
             
-            SVProgressHUD.showSuccessWithStatus("已发送")
             SVProgressHUD.setDefaultStyle(.Dark)
             SVProgressHUD.setMinimumDismissTimeInterval(1.5)
+            SVProgressHUD.showSuccessWithStatus("已发送")
             
             // 延迟退出控制器
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in

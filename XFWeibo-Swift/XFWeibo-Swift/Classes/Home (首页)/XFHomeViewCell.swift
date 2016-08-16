@@ -70,7 +70,7 @@ class XFHomeViewCell: UITableViewCell {
             }
             
             // 8.正文
-            contentLabel.text = viewModel.status?.text
+            contentLabel.attributedText = XFFindEmoticom.shareInstance.findAttrString(viewModel.status?.text, font: contentLabel.font)
             
             // 9.转发数
             if let repostCount = viewModel.status?.reposts_count where repostCount != 0  {
@@ -101,7 +101,10 @@ class XFHomeViewCell: UITableViewCell {
             if viewModel.status?.retweeted_status != nil {
                 
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name,  retContent = viewModel.status?.retweeted_status?.text {
-                    retweetedLabel.text = "@" + "\(screenName): " + retContent
+                    
+                    let retweetedText = "@" + "\(screenName): " + retContent
+                    retweetedLabel.attributedText = XFFindEmoticom.shareInstance.findAttrString(retweetedText, font: retweetedLabel.font)
+                    
                     // 设置转发正文顶部约束
                     retweetContentTopCons.constant = 15
                 }
