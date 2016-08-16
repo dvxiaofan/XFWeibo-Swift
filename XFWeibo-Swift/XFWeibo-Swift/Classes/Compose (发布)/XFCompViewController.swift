@@ -95,21 +95,32 @@ extension XFCompViewController {
         textView.resignFirstResponder()
         
         let statusText = textView.getEmoticonString()
-        XFNetWorkTools.shareInstance.sendWeibo(statusText) { (isSuccess) -> () in
-            SVProgressHUD.setMinimumDismissTimeInterval(1.5)
+        
+        // 定义一个回调闭包
+        let finishedCallBack = { (isSuccess : Bool) -> () in
+            
             SVProgressHUD.setDefaultStyle(.Dark)
+            SVProgressHUD.setMinimumDismissTimeInterval(1.5)
+            
             if !isSuccess {
                 SVProgressHUD.showErrorWithStatus("发送失败")
                 return
             }
-            // 发送陈工
+            // 发送成功
             SVProgressHUD.showSuccessWithStatus("已发送")
-        }
-        // 延迟退出控制器
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
             
-            self.dismissViewControllerAnimated(true, completion: nil)
-        })
+            // 延迟退出控制器
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+        }
+        
+        if let image = images.first {
+            XFNetWorkTools.shareInstance.sendWeibo(statusText, image: image, isSuccess: finishedCallBack)
+        } else {
+            XFNetWorkTools.shareInstance.sendWeibo(statusText, isSuccess: finishedCallBack)
+        }
     }
     
     // 键盘通知监听

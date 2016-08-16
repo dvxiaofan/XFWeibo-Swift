@@ -22,6 +22,7 @@ class XFNetWorkTools: AFHTTPSessionManager {
         
         tools.responseSerializer.acceptableContentTypes?.insert("text/html")
         tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        tools.responseSerializer.acceptableContentTypes?.insert("application/json")
         
         return tools
     }()
@@ -102,7 +103,7 @@ extension XFNetWorkTools {
     }
 }
 
-// MARK:- 发布微博
+// MARK:- 发布无图片微博
 extension XFNetWorkTools {
     func sendWeibo(statusText : String, isSuccess : (isSuccess : Bool) -> ()) {
         let urlString = "https://api.weibo.com/2/statuses/update.json"
@@ -114,14 +115,33 @@ extension XFNetWorkTools {
                 isSuccess(isSuccess: true)
             } else {
                 isSuccess(isSuccess: false)
+                XFLog("无图片的微博发送失败: \(error)")
             }
         }
     }
     
 }
 
-
-
+// MARK:- 发送图片微博
+extension XFNetWorkTools {
+    func sendWeibo(statusText : String, image : UIImage, isSuccess : (isSuccess : Bool) -> ()) {
+        let urlString = "https://api.weibo.com/2/statuses/upload.json"
+        let accessToken = (XFUserAccountTool.shareInstance.account?.access_token)!
+        let parameters = ["access_token" : accessToken, "status": statusText]
+        
+        POST(urlString, parameters: parameters, constructingBodyWithBlock: { (formatData) -> Void in
+            if let imageData = UIImageJPEGRepresentation(image, 0.5) {
+                formatData.appendPartWithFileData(imageData, name: "pic", fileName: "000.png", mimeType: "image/png")
+            }
+            
+            }, progress: nil, success: { (_, _) -> Void in
+                isSuccess(isSuccess: true)
+            }) { (_, error) -> Void in
+                XFLog("图片微博发送失败: \(error)")
+        }
+        
+    }
+}
 
 
 
