@@ -85,7 +85,6 @@ extension XFNetWorkTools {
 
 // MARK:- 请求主页数据
 extension XFNetWorkTools {
-    
     func loadHomeStatuses(since_id : Int, max_id : Int, finished : (result : [[String : AnyObject]]?, error : NSError?) -> ()) {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         //let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
@@ -103,7 +102,23 @@ extension XFNetWorkTools {
     }
 }
 
-
+// MARK:- 发布微博
+extension XFNetWorkTools {
+    func sendWeibo(statusText : String, isSuccess : (isSuccess : Bool) -> ()) {
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        let accessToken = (XFUserAccountTool.shareInstance.account?.access_token)!
+        let parameters = ["access_token" : accessToken, "status": statusText]
+        
+        requestData(methodType: .POST, urlString: urlString, parameters: parameters) { (result, error) -> () in
+            if result != nil {
+                isSuccess(isSuccess: true)
+            } else {
+                isSuccess(isSuccess: false)
+            }
+        }
+    }
+    
+}
 
 
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class XFCompViewController: UIViewController {
     
@@ -27,7 +28,10 @@ class XFCompViewController: UIViewController {
     private lazy var titleView : XFCompTitleView = XFCompTitleView()
     private lazy var images : [UIImage] = [UIImage]()
     private lazy var emoticonVc : XFEmoticonController = XFEmoticonController {[weak self] (emoticon) -> () in
+        // 插入表情
         self?.textView.insertEmoticon(emoticon)
+        //隐藏占位文字
+        self?.textViewDidChange(self!.textView)
     }
 
     // MARK:- 系统回调
@@ -87,7 +91,25 @@ extension XFCompViewController {
     
     // 发送按钮
     @objc private func sendClick() {
-        print(textView.getEmoticonString())
+        // 退出键盘
+        textView.resignFirstResponder()
+        
+        let statusText = textView.getEmoticonString()
+        XFNetWorkTools.shareInstance.sendWeibo(statusText) { (isSuccess) -> () in
+            SVProgressHUD.setMinimumDismissTimeInterval(1.5)
+            SVProgressHUD.setDefaultStyle(.Dark)
+            if !isSuccess {
+                SVProgressHUD.showErrorWithStatus("发送失败")
+                return
+            }
+            // 发送陈工
+            SVProgressHUD.showSuccessWithStatus("已发送")
+        }
+        // 延迟退出控制器
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
     
     // 键盘通知监听
