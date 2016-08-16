@@ -10,6 +10,7 @@ pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'MJRefresh'
 #pod 'SnapKit'
+pod 'HYLabel'
 
 
   # Pods for XFWeiboSwift

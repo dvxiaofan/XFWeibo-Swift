@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import HYLabel
 
 private let edgeMargin : CGFloat = 15
 private let picMargin : CGFloat = 10
@@ -20,7 +21,7 @@ class XFHomeViewCell: UITableViewCell {
     @IBOutlet weak var vipView: UIImageView!
     @IBOutlet weak var createAtLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     @IBOutlet weak var repostButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var zanButton: UIButton!
@@ -28,7 +29,7 @@ class XFHomeViewCell: UITableViewCell {
     @IBOutlet weak var bottomToolView: UIView!
     
     @IBOutlet weak var picView: XFPicCollectionView!
-    @IBOutlet weak var retweetedLabel: UILabel!
+    @IBOutlet weak var retweetedLabel: HYLabel!
     
     // MARK:- 约束属性
     @IBOutlet weak var contentLabelWidthCons: NSLayoutConstraint!
@@ -133,6 +134,37 @@ class XFHomeViewCell: UITableViewCell {
         
         // 设置正文宽度约束
         contentLabelWidthCons.constant = screenSize.width - 2 * edgeMargin
+        
+        // HYLabel 内容属性
+        //contentLabel.matchTextColor = UIColor.orangeColor()
+        //retweetedLabel.matchTextColor = contentLabel.matchTextColor
+        
+        /// 监听内容点击 原创
+        contentLabel.userTapHandler = { (label, user, range) in
+            XFLog(user)
+            XFLog(range)
+        }
+        contentLabel.linkTapHandler = { (label, link, range) in
+            XFLog(link)
+            XFLog(range)
+        }
+        contentLabel.topicTapHandler = { (label, topic, range) in
+            XFLog(topic)
+            XFLog(range)
+        }
+        // 转发微博
+        retweetedLabel.userTapHandler = { (label, user, range) in
+            XFLog(user)
+            XFLog(range)
+        }
+        retweetedLabel.linkTapHandler = { (label, link, range) in
+            XFLog(link)
+            XFLog(range)
+        }
+        retweetedLabel.topicTapHandler = { (label, topic, range) in
+            XFLog(topic)
+            XFLog(range)
+        }
     }
 }
 
