@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XFCompViewController" customModule="XFWeiboSwift" customModuleProvider="target">
             <connections>
+                <outlet property="emoBtn" destination="GPI-9n-yIB" id="FwH-Mj-w0W"/>
                 <outlet property="picPickerView" destination="Jj0-5r-teB" id="3QG-if-cP1"/>
                 <outlet property="pickerViewHeightCons" destination="YAR-OZ-IIb" id="4FH-qZ-5I5"/>
                 <outlet property="textView" destination="BIS-oJ-ThQ" id="FlR-oR-AdE"/>
@@ -65,6 +66,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_mentionbutton_background"/>
                                 <state key="highlighted" image="compose_mentionbutton_background_highlighted"/>
+                                <connections>
+                                    <action selector="tellWhoClick:" destination="-1" eventType="touchUpInside" id="MKY-rh-sL8"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="sft-zZ-Vzi"/>
@@ -74,6 +78,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_trendbutton_background"/>
                                 <state key="highlighted" image="compose_trendbutton_background_highlighted"/>
+                                <connections>
+                                    <action selector="topicClick:" destination="-1" eventType="touchUpInside" id="BFd-Gp-qUk"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="GBZ-N3-y1L"/>
@@ -84,6 +91,9 @@
                                 <state key="normal" image="compose_emoticonbutton_background"/>
                                 <state key="selected" image="compose_keyboardbutton_background"/>
                                 <state key="highlighted" image="compose_emoticonbutton_background_highlighted"/>
+                                <connections>
+                                    <action selector="emoClick:" destination="-1" eventType="touchUpInside" id="ih1-XO-1IJ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ZNW-GD-06J"/>
@@ -93,6 +103,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_pic_add_highlighted"/>
                                 <state key="selected" image="compose_keyboardbutton_background"/>
+                                <connections>
+                                    <action selector="addClick:" destination="-1" eventType="touchUpInside" id="DoM-JO-LSw"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem enabled="NO" title="   " id="dir-Jo-5tf" userLabel="右占位"/>

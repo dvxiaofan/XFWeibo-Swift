@@ -10,9 +10,13 @@ import UIKit
 
 class XFCompViewController: UIViewController {
     
+    // MARK:- 自定义属性
+    private var isSeleted : Bool = false
+    
     // MARK:- 拖线属性
     @IBOutlet weak var textView: XFCompTextView!
     @IBOutlet weak var picPickerView: XFPicPickerCollectionView!
+    @IBOutlet weak var emoBtn: UIButton!
     
     // MARK:- 约束属性
     @IBOutlet weak var toolBottomCons: NSLayoutConstraint!
@@ -22,6 +26,9 @@ class XFCompViewController: UIViewController {
     // MARK:- 懒加载
     private lazy var titleView : XFCompTitleView = XFCompTitleView()
     private lazy var images : [UIImage] = [UIImage]()
+    private lazy var emoticonVc : XFEmoticonController = XFEmoticonController {[weak self] (emoticon) -> () in
+        self?.textView.insertEmoticon(emoticon)
+    }
 
     // MARK:- 系统回调
     override func viewDidLoad() {
@@ -69,22 +76,21 @@ extension XFCompViewController {
         // 移除已选择照片
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "pickerDeletedPhoto:", name: XFPickerDeletedPhotoNote, object: nil)
     }
-    
 }
 
 // MARK:- 事件监听
 extension XFCompViewController {
-    /// 返回按钮点击事件
+    // 返回按钮点击事件
     @objc private func backClick() {
          dismissViewControllerAnimated(true, completion: nil)
     }
     
-    /// 发送按钮
+    // 发送按钮
     @objc private func sendClick() {
-        XFLog("发送按钮")
+        print(textView.getEmoticonString())
     }
     
-    /// 键盘通知监听
+    // 键盘通知监听
     @objc private func KeyboardWillChangeFrame(note : NSNotification) {
         // 获得动画执行的时间
         let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
@@ -103,7 +109,7 @@ extension XFCompViewController {
         }
     }
     
-    /// 选择图片界面弹出
+    // 选择图片界面弹出
     @IBAction func picPickerClick(sender: AnyObject) {
         // 退出键盘
         textView.resignFirstResponder()
@@ -113,6 +119,45 @@ extension XFCompViewController {
         UIView.animateWithDuration(0.25) { () -> Void in
             self.view.layoutIfNeeded()
         }
+    }
+    
+    // 表情键盘
+    @IBAction func emoClick(sender: AnyObject) {
+        // 设置按钮图片
+        isSeleted = !isSeleted
+        
+        if isSeleted == true {
+            emoBtn.setImage(UIImage(named: "compose_keyboardbutton_background"), forState: .Normal)
+            emoBtn.setImage(UIImage(named: "compose_keyboardbutton_background_highlighted"), forState: .Highlighted)
+        } else {
+            emoBtn.setImage(UIImage(named: "compose_emoticonbutton_background"), forState: .Normal)
+            emoBtn.setImage(UIImage(named: "compose_emoticonbutton_background_highlighted"), forState: .Highlighted)
+        }
+        
+        // 退出键盘
+        textView.resignFirstResponder()
+        
+        // 切换键盘 nil 为系统默认键盘
+        textView.inputView = textView.inputView != nil ? nil : emoticonVc.view
+        
+        // 弹出键盘
+        textView.becomeFirstResponder()
+        
+    }
+    
+    // 想@谁
+    @IBAction func tellWhoClick(sender: AnyObject) {
+        XFLog("@谁")
+    }
+    
+    // 话题
+    @IBAction func topicClick(sender: AnyObject) {
+        XFLog("话题")
+    }
+    
+    // 添加其他
+    @IBAction func addClick(sender: AnyObject) {
+        XFLog("添加")
     }
 }
 
