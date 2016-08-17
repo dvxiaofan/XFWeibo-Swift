@@ -143,6 +143,33 @@ extension XFShowBigPhotoController : XFShowBigPhotoCellDelegate {
     }
 }
 
+// MARK: - XFAnimatorDismissDelegate
+extension XFShowBigPhotoController : XFAnimatorDismissDelegate {
+    
+    func indexPathForDissmissView() -> NSIndexPath {
+        // 获取正在显示的 indexPath
+        let cell = collectionView.visibleCells().first!
+        
+        return collectionView.indexPathForCell(cell)!
+    }
+    
+    func imageViewForDissmissView() -> UIImageView {
+        // 创建 uiimageView 对象
+        let imageView = UIImageView()
+        
+        let cell = collectionView.visibleCells().first as! XFShowBigPhotoCell
+        
+        imageView.frame = cell.imageView.frame
+        imageView.image = cell.imageView.image
+        
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true 
+        
+        return imageView
+    }
+    
+}
+
 // MARK:- 自定义 Layout
 class XFShowBigPhotoCollectionViewLayout: UICollectionViewFlowLayout {
     

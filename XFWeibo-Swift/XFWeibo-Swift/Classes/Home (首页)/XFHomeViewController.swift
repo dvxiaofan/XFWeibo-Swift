@@ -151,12 +151,18 @@ extension XFHomeViewController {
         let indexPath = note.userInfo![XFShowBigPhtotIndexKey] as! NSIndexPath
         let picURLs = note.userInfo![XFShowBigPhtotURLsKey] as! [NSURL]
         let showBigPhotoVc = XFShowBigPhotoController(indexPath: indexPath, picURLs: picURLs)
+        let object = note.object as! XFPicCollectionView
         
         // 设置弹出样式
         showBigPhotoVc.modalPresentationStyle = .Custom // 不隐藏后面的背景
         
         // 设置转场代理
         showBigPhotoVc.transitioningDelegate = showBigPhotoAnimator
+        
+        // 设置动画代理
+        showBigPhotoAnimator.presentedDelegate = object
+        showBigPhotoAnimator.indexPath = indexPath
+        showBigPhotoAnimator.dismisDelegate = showBigPhotoVc
         
         presentViewController(showBigPhotoVc, animated: true, completion: nil)
     }
