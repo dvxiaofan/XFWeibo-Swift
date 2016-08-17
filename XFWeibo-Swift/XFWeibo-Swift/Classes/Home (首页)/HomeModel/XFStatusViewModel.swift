@@ -77,14 +77,21 @@ class XFStatusViewModel: NSObject {
                     continue
                 }
                 picURLs.append(NSURL(string: picURLString)!)
+                //picURLs.append(getBigURL(NSURL(string: picURLString)!))
                 
             }
         }
-        
     }
 }
 
-
+//extension XFStatusViewModel {
+    //// 获得大图 url
+    //private func getBigURL(smallURL : NSURL) -> NSURL {
+        //let smallURLStr = smallURL.absoluteString
+        //let bigRUL = smallURLStr.stringByReplacingOccurrencesOfString("thumbnail", withString: "bmiddle")
+        //return NSURL(string: bigRUL)!
+    //}
+//}
 
 
 

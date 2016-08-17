@@ -16,6 +16,8 @@
 		BD2E762C1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */; };
 		BD2E762F1D5ECEDB0096ABD6 /* XFPicPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E762D1D5ECEDB0096ABD6 /* XFPicPickerCell.swift */; };
 		BD2E76301D5ECEDB0096ABD6 /* XFPicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2E762E1D5ECEDB0096ABD6 /* XFPicPickerCell.xib */; };
+		BD31A06F1D64141B00B4C203 /* XFShowBigPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31A06E1D64141B00B4C203 /* XFShowBigPhotoCell.swift */; };
+		BD31A0711D642D6E00B4C203 /* XFProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31A0701D642D6E00B4C203 /* XFProgressView.swift */; };
 		BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */; };
 		BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */; };
 		BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */; };
@@ -104,6 +106,8 @@
 		BD2E762B1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPicPickerCollectionView.swift; sourceTree = "<group>"; };
 		BD2E762D1D5ECEDB0096ABD6 /* XFPicPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPicPickerCell.swift; sourceTree = "<group>"; };
 		BD2E762E1D5ECEDB0096ABD6 /* XFPicPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPicPickerCell.xib; sourceTree = "<group>"; };
+		BD31A06E1D64141B00B4C203 /* XFShowBigPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFShowBigPhotoCell.swift; sourceTree = "<group>"; };
+		BD31A0701D642D6E00B4C203 /* XFProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFProgressView.swift; sourceTree = "<group>"; };
 		BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopAnimator.swift; sourceTree = "<group>"; };
 		BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFNetWorkTools.swift; sourceTree = "<group>"; };
 		BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFOAuthViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				BD78FE001D635762007CCA03 /* XFShowBigPhotoController.swift */,
+				BD31A06E1D64141B00B4C203 /* XFShowBigPhotoCell.swift */,
+				BD31A0701D642D6E00B4C203 /* XFProgressView.swift */,
 			);
 			path = ShowBigPhoto;
 			sourceTree = "<group>";
@@ -769,6 +775,7 @@
 				BD6F92F21D62BAD7000BE126 /* XFEmoticon.swift in Sources */,
 				BD2E762F1D5ECEDB0096ABD6 /* XFPicPickerCell.swift in Sources */,
 				BDA2D4781D63132A0039C106 /* XFFindEmoticom.swift in Sources */,
+				BD31A0711D642D6E00B4C203 /* XFProgressView.swift in Sources */,
 				BD54E2D31D5C20FB003D79F2 /* XFHomeViewController.swift in Sources */,
 				BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */,
 				BD54E2FB1D5C3D3E003D79F2 /* XFStatusViewModel.swift in Sources */,
@@ -795,6 +802,7 @@
 				BDB46A6E1D54933100BF8829 /* AppDelegate.swift in Sources */,
 				BDEB25141D55C0490010FFEA /* XFBaseViewController.swift in Sources */,
 				BD54E2FD1D5C48DF003D79F2 /* XFHomeViewCell.swift in Sources */,
+				BD31A06F1D64141B00B4C203 /* XFShowBigPhotoCell.swift in Sources */,
 				BDD22B451D55B959007A86F8 /* XFDefineFile.swift in Sources */,
 				BD4A292B1D5B2F63009F67B9 /* XFUserAccountTool.swift in Sources */,
 				BD2E762C1D5EC8560096ABD6 /* XFPicPickerCollectionView.swift in Sources */,
