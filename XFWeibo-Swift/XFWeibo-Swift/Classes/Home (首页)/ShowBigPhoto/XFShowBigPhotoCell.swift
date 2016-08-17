@@ -26,8 +26,8 @@ class XFShowBigPhotoCell: UICollectionViewCell {
     
     // MARK:- 懒加载
     private lazy var scroView : UIScrollView = UIScrollView()
-    private lazy var imageView : UIImageView = UIImageView()
     private lazy var progressView : XFProgressView = XFProgressView()
+    lazy var imageView : UIImageView = UIImageView()
     
     // MARK:- 自定义构造函数
     override init(frame: CGRect) {

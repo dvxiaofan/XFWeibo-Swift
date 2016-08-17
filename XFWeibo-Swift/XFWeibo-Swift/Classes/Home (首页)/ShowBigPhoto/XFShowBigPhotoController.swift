@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SVProgressHUD
 
 private let XFShowBigPhotoCellID = "XFShowBigPhotoCellID"
 
@@ -32,7 +33,6 @@ class XFShowBigPhotoController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
     // MARK:- 系统回调
     override func viewDidLoad() {
@@ -96,8 +96,26 @@ extension XFShowBigPhotoController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @objc private func moreBtnClick() {
-        XFLog("更多")
+    @objc private func moreBtnClick() { // 先用作保存图片
+        //XFLog("更多")//
+        let cell = collectionView.visibleCells().first as! XFShowBigPhotoCell
+        guard let image = cell.imageView.image else {
+            return
+        }
+        
+        // 将图片保存到相册中
+        UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSaveingWithError:contextInfo:", nil)
+    }
+    
+    @objc private func image(image : UIImage, didFinishSaveingWithError error : NSError?, contextInfo : AnyObject) {
+        var errorInfo = ""
+        if error != nil {
+            errorInfo = "保存失败"
+        } else {
+            errorInfo = "保存成功"
+        }
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        SVProgressHUD.showInfoWithStatus(errorInfo)
     }
 }
 
