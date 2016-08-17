@@ -18,6 +18,7 @@
 		BD2E76301D5ECEDB0096ABD6 /* XFPicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2E762E1D5ECEDB0096ABD6 /* XFPicPickerCell.xib */; };
 		BD31A06F1D64141B00B4C203 /* XFShowBigPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31A06E1D64141B00B4C203 /* XFShowBigPhotoCell.swift */; };
 		BD31A0711D642D6E00B4C203 /* XFProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31A0701D642D6E00B4C203 /* XFProgressView.swift */; };
+		BD3501581D6450DD006B94F8 /* XFShowBigPhtotAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3501571D6450DD006B94F8 /* XFShowBigPhtotAnimator.swift */; };
 		BD3E34221D5ACFC70088B23F /* XFPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */; };
 		BD3E34441D5AF1DE0088B23F /* XFNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */; };
 		BD3E34481D5AFD110088B23F /* XFOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */; };
@@ -108,6 +109,7 @@
 		BD2E762E1D5ECEDB0096ABD6 /* XFPicPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFPicPickerCell.xib; sourceTree = "<group>"; };
 		BD31A06E1D64141B00B4C203 /* XFShowBigPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFShowBigPhotoCell.swift; sourceTree = "<group>"; };
 		BD31A0701D642D6E00B4C203 /* XFProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFProgressView.swift; sourceTree = "<group>"; };
+		BD3501571D6450DD006B94F8 /* XFShowBigPhtotAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFShowBigPhtotAnimator.swift; sourceTree = "<group>"; };
 		BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFPopAnimator.swift; sourceTree = "<group>"; };
 		BD3E34431D5AF1DE0088B23F /* XFNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFNetWorkTools.swift; sourceTree = "<group>"; };
 		BD3E34461D5AFD110088B23F /* XFOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFOAuthViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				BD7F74B21D561C0200F6EC9D /* XFPopViewController.xib */,
 				BD7F74B51D56242000F6EC9D /* XFPresentationController.swift */,
 				BD3E34211D5ACFC70088B23F /* XFPopAnimator.swift */,
+				BD3501571D6450DD006B94F8 /* XFShowBigPhtotAnimator.swift */,
 			);
 			path = UIPopover;
 			sourceTree = "<group>";
@@ -793,6 +796,7 @@
 				BDADBFFB1D5B66B80064EF28 /* XFWelcomeViewController.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
 				BD54E2D51D5C2120003D79F2 /* XFHomeStatus.swift in Sources */,
+				BD3501581D6450DD006B94F8 /* XFShowBigPhtotAnimator.swift in Sources */,
 				BD0B4CA81D5B168B0077593A /* XFUserAccount.swift in Sources */,
 				BD6F92F71D62BAD7000BE126 /* XFEmoticonCell.swift in Sources */,
 				BDB46AA61D549D9100BF8829 /* XFDisViewController.swift in Sources */,

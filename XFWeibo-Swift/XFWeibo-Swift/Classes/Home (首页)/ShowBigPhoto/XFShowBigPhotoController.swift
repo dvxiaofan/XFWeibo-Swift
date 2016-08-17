@@ -48,7 +48,7 @@ class XFShowBigPhotoController: UIViewController {
     override func loadView() {
         super.loadView()
         // 为了设置 scrollView 的间隔, 先讲控制器宽加20,然后再 scrollView 宽度减20
-        view.bounds.size.width += 20
+        view.frame.size.width += 20
     }
 }
 
@@ -64,7 +64,7 @@ extension XFShowBigPhotoController {
         
         moreBtn.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(30)
-            make.right.equalTo(-15)
+            make.right.equalTo(-35)
             make.size.equalTo(CGSize(width: 40, height: 30))
         }
         moreBtn.setImage(UIImage(named: "navigationbar_more1"), forState: .Normal)

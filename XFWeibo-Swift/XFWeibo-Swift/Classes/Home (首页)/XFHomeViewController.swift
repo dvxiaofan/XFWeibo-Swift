@@ -24,6 +24,7 @@ class XFHomeViewController: XFBaseViewController {
     }
     // 模型数组
     private lazy var viewModels : [XFStatusViewModel] = [XFStatusViewModel]()
+    private lazy var showBigPhotoAnimator : XFShowBigPhtotAnimator = XFShowBigPhtotAnimator()
     
     // MARK:- 系统回调方法
     override func viewDidLoad() {
@@ -149,8 +150,13 @@ extension XFHomeViewController {
         
         let indexPath = note.userInfo![XFShowBigPhtotIndexKey] as! NSIndexPath
         let picURLs = note.userInfo![XFShowBigPhtotURLsKey] as! [NSURL]
-        
         let showBigPhotoVc = XFShowBigPhotoController(indexPath: indexPath, picURLs: picURLs)
+        
+        // 设置弹出样式
+        showBigPhotoVc.modalPresentationStyle = .Custom // 不隐藏后面的背景
+        
+        // 设置转场代理
+        showBigPhotoVc.transitioningDelegate = showBigPhotoAnimator
         
         presentViewController(showBigPhotoVc, animated: true, completion: nil)
     }
