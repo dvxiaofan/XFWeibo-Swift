@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol XFShowBigPhotoCellDelegate : NSObjectProtocol {
+    func imageTap()
+}
+
 class XFShowBigPhotoCell: UICollectionViewCell {
     
     // MARK:- 对外属性
@@ -17,6 +21,8 @@ class XFShowBigPhotoCell: UICollectionViewCell {
             setupContent(picURL)
         }
     }
+    
+    var delegate : XFShowBigPhotoCellDelegate?
     
     // MARK:- 懒加载
     private lazy var scroView : UIScrollView = UIScrollView()
@@ -51,15 +57,19 @@ extension XFShowBigPhotoCell {
         progressView.hidden = true
         progressView.backgroundColor = UIColor.clearColor()
         
-        //imageView.userInteractionEnabled = true
-        
-        //let tap = UIGestureRecognizer(target: self, action: "imageTap")
-        //imageView.addGestureRecognizer(tap)
+        // 监听 imageView 的点击
+        imageView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: "imageTap")
+        imageView.addGestureRecognizer(tap)
     }
+}
+
+// MARK:- 事件监听
+extension XFShowBigPhotoCell {
     
-    //private func imageTap() {
-        //XFLog("ttttap") 
-    //}
+    @objc private func imageTap() {
+        delegate?.imageTap()
+    }
 }
 
 // MARK:- 设置 imageView 图片

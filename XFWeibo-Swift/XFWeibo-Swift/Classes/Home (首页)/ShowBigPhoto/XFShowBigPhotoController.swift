@@ -21,9 +21,6 @@ class XFShowBigPhotoController: UIViewController {
     private lazy var moreBtn : UIButton = UIButton()
     private lazy var showLabel : UILabel = UILabel()
     
-    // 测试用
-    private lazy var closeBtn : UIButton = UIButton()
-    
     // MARK:- 自定义构造函数
     init(indexPath : NSIndexPath, picURLs : [NSURL]) {
         self.indexPath = indexPath
@@ -63,16 +60,6 @@ extension XFShowBigPhotoController {
         view.addSubview(moreBtn)
         view.addSubview(showLabel)
         
-        view.addSubview(closeBtn)
-        closeBtn.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(30)
-            make.left.equalTo(15)
-            make.size.equalTo(CGSize(width: 40, height: 30))
-        }
-        closeBtn.setTitle("关闭", forState: .Normal)
-        closeBtn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        closeBtn.addTarget(self, action: "closeAction", forControlEvents: .TouchUpInside)
-        
         collectionView.frame = view.bounds
         
         moreBtn.snp_makeConstraints { (make) -> Void in
@@ -87,6 +74,7 @@ extension XFShowBigPhotoController {
             make.centerY.equalTo(moreBtn.snp_centerY)
             make.centerX.equalTo(view)
         }
+        
         showLabel.text = "1/\(picURLs.count)"
         showLabel.textColor = UIColor.whiteColor()
         
@@ -113,7 +101,7 @@ extension XFShowBigPhotoController {
     }
 }
 
-// MARK: - UICollectionView 数据源和代理
+// MARK: - UICollectionView 数据源
 extension XFShowBigPhotoController : UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -124,8 +112,16 @@ extension XFShowBigPhotoController : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(XFShowBigPhotoCellID, forIndexPath: indexPath) as! XFShowBigPhotoCell
         
         cell.picURL = picURLs[indexPath.item]
+        cell.delegate = self
         
         return cell
+    }
+}
+
+// MARK: - XFShowBigPhotoCellDelegate
+extension XFShowBigPhotoController : XFShowBigPhotoCellDelegate {
+    func imageTap() {
+        closeAction()
     }
 }
 
