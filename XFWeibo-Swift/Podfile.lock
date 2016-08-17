@@ -19,6 +19,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SnapKit (0.21.1)
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - HYLabel
   - MJRefresh
   - SDWebImage
+  - SnapKit (~> 0.21.1)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -33,8 +35,9 @@ SPEC CHECKSUMS:
   HYLabel: a1294c88a57fa0c71651e167a6cf2ffcf1de9c28
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 76fe156c32b7e62f055e2f69e0aab04ae706c7d2
+PODFILE CHECKSUM: d008200419018891071cbae4f4dea3a4f098ebcb
 
 COCOAPODS: 1.1.0.beta.1

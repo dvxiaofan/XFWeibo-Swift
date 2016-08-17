@@ -146,6 +146,7 @@ extension XFHomeViewController {
     
     /// 点击查看大图
     @objc private func showBigPhtot(note : NSNotification) {
+        
         let indexPath = note.userInfo![XFShowBigPhtotIndexKey] as! NSIndexPath
         let picURLs = note.userInfo![XFShowBigPhtotURLsKey] as! [NSURL]
         

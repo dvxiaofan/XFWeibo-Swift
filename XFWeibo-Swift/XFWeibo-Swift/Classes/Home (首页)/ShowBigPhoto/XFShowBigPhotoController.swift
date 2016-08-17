@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class XFShowBigPhotoController: UIViewController {
     // MARK:- 定义属性
@@ -35,7 +36,7 @@ class XFShowBigPhotoController: UIViewController {
         super.viewDidLoad()
         
         // 设置 UI 界面
-        
+        setupUI()
     }
     
 
@@ -48,8 +49,18 @@ extension XFShowBigPhotoController {
         view.addSubview(collectionView)
         view.addSubview(moreBtn)
         
+        //collectionView.backgroundColor = UIColor.blueColor()
+        //moreBtn.backgroundColor = UIColor.orangeColor()
+        
         collectionView.frame = view.bounds
-        //moreBtn.frame 
+        moreBtn.snp_makeConstraints { (make) -> Void in
+            make.top.equalTo(30)
+            make.right.equalTo(-15)
+            make.size.equalTo(CGSize(width: 40, height: 30))
+        }
+        moreBtn.setImage(UIImage(named: "navigationbar_more1"), forState: .Normal)
+        moreBtn.setImage(UIImage(named: "navigationbar_more_highlighted"), forState: .Highlighted)
+        
     }
 }
 

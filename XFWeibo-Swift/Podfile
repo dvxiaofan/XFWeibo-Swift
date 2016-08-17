@@ -9,7 +9,7 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'MJRefresh'
-#pod 'SnapKit'
+pod 'SnapKit', '~> 0.21.1'
 pod 'HYLabel'
 
 
