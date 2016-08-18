@@ -98,13 +98,35 @@ extension XFShowBigPhotoController {
     
     @objc private func moreBtnClick() { // 先用作保存图片
         //XFLog("更多")//
-        let cell = collectionView.visibleCells().first as! XFShowBigPhotoCell
-        guard let image = cell.imageView.image else {
-            return
+        
+        let alertSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let action = UIAlertAction(title: "保存图片", style: .Default) { (action) -> Void in
+            let cell = self.collectionView.visibleCells().first as! XFShowBigPhotoCell
+            guard let image = cell.imageView.image else {
+                return
+            }
+            
+            //将图片保存到相册中
+            UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSaveingWithError:contextInfo:", nil)
         }
         
-        // 将图片保存到相册中
-        UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSaveingWithError:contextInfo:", nil)
+        let action1 = UIAlertAction(title: "转发微博", style: .Default) { (action) -> Void in
+            XFLog("转发微博")
+        }
+        
+        let action2 = UIAlertAction(title: "赞", style: .Default) { (action) -> Void in
+            XFLog("赞")
+        }
+        
+        let action3 = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
+        
+        alertSheet.addAction(action)
+        alertSheet.addAction(action1)
+        alertSheet.addAction(action2)
+        alertSheet.addAction(action3)
+        
+        presentViewController(alertSheet, animated: true, completion: nil)
     }
     
     @objc private func image(image : UIImage, didFinishSaveingWithError error : NSError?, contextInfo : AnyObject) {

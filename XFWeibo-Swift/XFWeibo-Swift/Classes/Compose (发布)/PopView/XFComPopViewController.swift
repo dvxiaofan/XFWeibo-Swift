@@ -11,7 +11,6 @@ import UIKit
 class XFComPopViewController: UIViewController {
     
     // MARK:- 约束属性
-    
     @IBOutlet weak var bottomCons: NSLayoutConstraint!
 
     // MARK:- 系统回调

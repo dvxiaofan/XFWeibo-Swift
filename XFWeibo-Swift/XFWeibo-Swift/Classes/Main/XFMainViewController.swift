@@ -11,15 +11,13 @@ import UIKit
 class XFMainViewController: UITabBarController {
     
     // MARK:- 懒加载
-    
     private lazy var composeBtn : UIButton = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
     
     // MARK:- 系统回调方法
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // 设置发布按钮
         setupComposeBtn()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,9 +31,7 @@ extension XFMainViewController {
     /// 设置发布按钮
     private func setupComposeBtn() {
         tabBar.addSubview(composeBtn)
-        
         composeBtn.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
-        
         composeBtn.addTarget(self, action: "composeBtnClick", forControlEvents: .TouchUpInside)
     }
 }
@@ -46,7 +42,6 @@ extension XFMainViewController {
         
         let comPopVc = XFComPopViewController()
         presentViewController(comPopVc, animated: true, completion: nil)
-        //UIApplication.sharedApplication().keyWindow?.rootViewController = XFComPopViewController()
     }
 }
 
