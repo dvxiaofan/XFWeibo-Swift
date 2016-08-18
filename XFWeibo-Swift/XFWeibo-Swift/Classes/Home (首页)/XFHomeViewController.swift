@@ -61,10 +61,10 @@ extension XFHomeViewController {
     ///设置导航栏
     private func setupNavBar() {
         // zuo
-        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendsearch")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendsearch", target: self, action: "leftItemClick")
         
         // you
-        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: "rightItemClick")
         
         // titleview
         titleBtn.setTitle(XFUserAccountTool.shareInstance.account?.screen_name, forState: .Normal)
@@ -123,8 +123,14 @@ extension XFHomeViewController {
 // MARK:- 事件监听
 extension XFHomeViewController {
     /// 左按钮点击
+    @objc private func leftItemClick() {
+        XFLog("首页导航左按钮点击")
+    }
     
     /// 右按钮点击
+    @objc private func rightItemClick() {
+        XFLog("首页导航右按钮点击")
+    }
     
     ///titleView 点击
     @objc private func titleBtnClick(titleBtn : XFTitleButton) {

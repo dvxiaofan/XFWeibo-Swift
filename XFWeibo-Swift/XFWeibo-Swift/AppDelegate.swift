@@ -16,15 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 根据是否登录判断默认 vc
     var defaultVc : UIViewController? {
         let isLogin = XFUserAccountTool.shareInstance.isLogin
-        
         return isLogin ? XFWelcomeViewController() : UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
     }
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // 设置全局 tabbar 颜色
-        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        // 设置全局颜色
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
         
         // 创建 window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
