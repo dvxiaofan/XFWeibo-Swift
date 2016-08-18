@@ -17,10 +17,8 @@ class XFOAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 设置导航栏
         setupNavBar()
         
-        // 加载授权页面
         loadOAtuhPage()
     }
 }
@@ -36,20 +34,15 @@ extension XFOAuthViewController {
     }
     
     private func loadOAtuhPage() {
-        // 授权页面 url
         let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(app_Key)&redirect_uri=\(redirect_uri)"
         
-        // 创建对应 nsurl
         guard let url = NSURL(string: urlString) else {
             return
         }
         
-        // 创建 request
         let request = NSURLRequest(URL: url)
         
-        // 加载
         webView.loadRequest(request)
-        
     }
 }
 
@@ -73,7 +66,6 @@ extension XFOAuthViewController : UIWebViewDelegate{
 
     // 开始加载
     func webViewDidStartLoad(webView: UIWebView) {
-        // 显示加载提示
         SVProgressHUD.show()
         SVProgressHUD.setDefaultStyle(.Dark)
     }
@@ -91,30 +83,23 @@ extension XFOAuthViewController : UIWebViewDelegate{
     // 将要加载时调用
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        // 获取加载网页的 URL
         guard let url = request.URL else {
-            // 继续加载网页
             return true
         }
         
-        // 获取 URL 中的字符串
         let urlString = url.absoluteString
         
-        // 判断字符冲是否含有 code 字段
         guard urlString.containsString("code") else {
             return true
         }
         
-        // 将 code 截取出来
         let code = urlString.componentsSeparatedByString("code=").last!
         
-        // 请求AccessToken
         loadAccessToken(code)
         
         return false
     }
 }
-
 
 // MARK:- 请求数据
 extension XFOAuthViewController {
@@ -122,13 +107,11 @@ extension XFOAuthViewController {
     private func loadAccessToken(code : String) {
         XFNetWorkTools.shareInstance.loadAccessToken(code) { (result, error) -> () in
             
-            // 有错误
             if error != nil {
                 XFLog(error)
                 return
             }
             
-            // 拿到结果
             guard let accountDict = result else {
                 XFLog("没有获取到授权后的数据")
                 return
@@ -137,14 +120,12 @@ extension XFOAuthViewController {
             // 将字典专程模型对象
             let account = XFUserAccount(dict: accountDict)
             
-            // 请求用户数据
             self.loadUserInfo(account)
         }
     }
     
     /// 请求用户数据
     private func loadUserInfo(account : XFUserAccount) {
-        // 获取 accesstoken
         guard let accessToken = account.access_token else {
             return
         }
@@ -160,22 +141,17 @@ extension XFOAuthViewController {
                 return
             }
             
-            // 拿到用户数据
             guard let userInfoDict = result else {
                 return
             }
             
-            // 从字典中取出昵称和头像
             account.screen_name = userInfoDict["screen_name"] as? String
             account.avatar_large = userInfoDict["avatar_large"] as? String
             
-            // 保存用户数据
             NSKeyedArchiver.archiveRootObject(account, toFile: XFUserAccountTool.shareInstance.accountPath)
             
-            // 将 account 对象设置到单例对象中
             XFUserAccountTool.shareInstance.account = account
             
-            // 退出当前控制器 显示欢迎界面
             self.dismissViewControllerAnimated(false, completion: { () -> Void in
                 UIApplication.sharedApplication().keyWindow?.rootViewController = XFWelcomeViewController()
             })

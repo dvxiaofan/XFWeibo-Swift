@@ -25,7 +25,7 @@ class XFShowBigPhotoCell: UICollectionViewCell {
     var delegate : XFShowBigPhotoCellDelegate?
     
     // MARK:- 懒加载
-    private lazy var scroView : UIScrollView = UIScrollView()
+    private lazy var scrollView : UIScrollView = UIScrollView()
     private lazy var progressView : XFProgressView = XFProgressView()
     lazy var imageView : UIImageView = UIImageView()
     
@@ -38,19 +38,19 @@ class XFShowBigPhotoCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
  // MARK:- 设置 UI 界面
 extension XFShowBigPhotoCell {
     
     private func setupUI() {
-        contentView.addSubview(scroView)
-        contentView.addSubview(imageView)
-        contentView.addSubview(progressView)
         
-        scroView.frame = contentView.bounds
-        scroView.frame.size.width -= 20
+        contentView.addSubview(scrollView)
+        contentView.addSubview(progressView)
+        scrollView.addSubview(imageView)
+        
+        scrollView.frame = contentView.bounds
+        scrollView.frame.size.width -= 20
         progressView.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         progressView.center = CGPoint(x: screenSize.width * 0.5, y: screenSize.height * 0.5)
         
@@ -85,17 +85,19 @@ extension XFShowBigPhotoCell {
         let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(picURL.absoluteString)
         
         // 计算 imageviewframe
-        let imgX : CGFloat = 0
         let imgWidth = screenSize.width
         let imgHeight = imgWidth / image.size.width * image.size.height
-        
-        var imgY : CGFloat = 0
-        if imgHeight > screenSize.height {
+        var imgY : CGFloat
+        if imgHeight >= screenSize.height {
             imgY = 0
         } else {
             imgY = (screenSize.height - imgHeight) * 0.5
         }
-        imageView.frame = CGRect(x: imgX, y: imgY, width: imgWidth, height: imgHeight)
+        imageView.frame = CGRect(x: 0, y: imgY, width: imgWidth, height: imgHeight)
+        
+        // 设置 scrollView 的 contentsize
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.contentSize = CGSize(width: 0, height: imgHeight)
         
         // 设置图片
         progressView.hidden = false
@@ -105,20 +107,15 @@ extension XFShowBigPhotoCell {
             }) { (_, _, _, _) -> Void in
               self.progressView.hidden = true
         }
-        
-        // 设置 scrollView 的 contentsize
-        scroView.contentSize = CGSize(width: 0, height: imgHeight)
     }
     
     // 获得大图 url
     private func getBigURL(smallURL : NSURL) -> NSURL {
         let smallURLStr = smallURL.absoluteString
-        let bigRUL = smallURLStr.stringByReplacingOccurrencesOfString("thumbnail", withString: "bmiddle")
-        return NSURL(string: bigRUL)!
+        let bigRULStr = smallURLStr.stringByReplacingOccurrencesOfString("thumbnail", withString: "bmiddle")
+        return NSURL(string: bigRULStr)!
     }
 }
-
-
 
 
 

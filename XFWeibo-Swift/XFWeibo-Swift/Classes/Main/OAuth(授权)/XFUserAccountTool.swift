@@ -18,9 +18,7 @@ class XFUserAccountTool {
     
     // MARK:- 计算属性
     var accountPath : String {
-        // 从沙盒中读取归档信息
         let accountPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-        
         return (accountPath as NSString).stringByAppendingPathComponent("user.plist")
     }
     
@@ -38,7 +36,6 @@ class XFUserAccountTool {
     
     // MARK:- 重写 init() 方法
     init() {
-        // 读取信息
         account = NSKeyedUnarchiver.unarchiveObjectWithFile(accountPath) as? XFUserAccount
     }
 }

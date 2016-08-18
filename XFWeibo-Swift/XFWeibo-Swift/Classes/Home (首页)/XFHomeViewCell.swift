@@ -97,6 +97,7 @@ class XFHomeViewCell: UITableViewCell {
             
             // 13.将 picURL 数据传递给 picview
             picView.picURLs = viewModel.picURLs
+            picView.clipsToBounds = true
             
             // 14. 设置转发微博正文 和背景颜色
             if viewModel.status?.retweeted_status != nil {

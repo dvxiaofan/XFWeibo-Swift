@@ -33,8 +33,14 @@ class XFShowBigPhotoController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK:- 系统回调
+    override func loadView() {
+        super.loadView()
+        // 为了设置 scrollView 的间隔, 先讲控制器宽加20,然后再 scrollView 宽度减20
+        view.frame.size.width += 20
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,12 +49,6 @@ class XFShowBigPhotoController: UIViewController {
         
         // 滚动到对应图片
         collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: false)
-    }
-    
-    override func loadView() {
-        super.loadView()
-        // 为了设置 scrollView 的间隔, 先讲控制器宽加20,然后再 scrollView 宽度减20
-        view.frame.size.width += 20
     }
 }
 
@@ -96,8 +96,7 @@ extension XFShowBigPhotoController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @objc private func moreBtnClick() { // 先用作保存图片
-        //XFLog("更多")//
+    @objc private func moreBtnClick() {
         
         let alertSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
@@ -158,14 +157,14 @@ extension XFShowBigPhotoController : UICollectionViewDataSource {
     }
 }
 
-// MARK: - XFShowBigPhotoCellDelegate
+// MARK: - XFShowBigPhotoCell代理
 extension XFShowBigPhotoController : XFShowBigPhotoCellDelegate {
     func imageTap() {
         closeAction()
     }
 }
 
-// MARK: - XFAnimatorDismissDelegate
+// MARK: - XFAnimatorDismiss 代理
 extension XFShowBigPhotoController : XFAnimatorDismissDelegate {
     
     func indexPathForDissmissView() -> NSIndexPath {
@@ -196,12 +195,13 @@ extension XFShowBigPhotoController : XFAnimatorDismissDelegate {
 class XFShowBigPhotoCollectionViewLayout: UICollectionViewFlowLayout {
     
     override func prepareLayout() {
-        itemSize = collectionView!.frame.size
+        super.prepareLayout()
         
+        itemSize = collectionView!.frame.size
         minimumLineSpacing = 0
         minimumInteritemSpacing = 0
-        
         scrollDirection = .Horizontal
+        
         collectionView?.pagingEnabled = true
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false

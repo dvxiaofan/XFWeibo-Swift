@@ -11,9 +11,7 @@ import UIKit
 class XFUserAccount: NSObject, NSCoding {
     
     // MARK:- 属性
-    /// 授权后的access_token
     var access_token : String?
-    /// 过期时间 -- 秒
     var expires_in : NSTimeInterval = 0 {
         didSet {
             expires_date = NSDate(timeIntervalSinceNow: expires_in)
@@ -33,8 +31,6 @@ class XFUserAccount: NSObject, NSCoding {
     
     
     // MARK:- 自定义构造函数
-    //override init() {}
-    
     init(dict : [String : AnyObject]) {
         super.init()
         
@@ -43,12 +39,10 @@ class XFUserAccount: NSObject, NSCoding {
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
     
-    // MARK:- description 重写, 自定打印对象时的内容
     override var description : String {
         return dictionaryWithValuesForKeys(["access_token", "expires_date", "uid"]).description
     }
     
-    // MARK:- 归档解档
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(uid, forKey: "uid")
         aCoder.encodeObject(access_token, forKey: "access_token")
@@ -64,7 +58,6 @@ class XFUserAccount: NSObject, NSCoding {
         avatar_large = aDecoder.decodeObjectForKey("avatar_large") as? String
         expires_date = aDecoder.decodeObjectForKey("expires_date") as? NSDate
     }
-    
 }
 
 

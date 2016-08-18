@@ -63,8 +63,8 @@
 		BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */; };
 		BDD22B431D55A82A007A86F8 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */; };
 		BDD22B451D55B959007A86F8 /* XFDefineFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD22B441D55B959007A86F8 /* XFDefineFile.swift */; };
-		BDD65C141D6555D200A0AEAB /* XFComPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD65C121D6555D200A0AEAB /* XFComPopViewController.swift */; };
-		BDD65C151D6555D200A0AEAB /* XFComPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD65C131D6555D200A0AEAB /* XFComPopViewController.xib */; };
+		BDD65C1C1D6589EE00A0AEAB /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BDD65C191D6589EE00A0AEAB /* images.bundle */; };
+		BDD65C1D1D6589EE00A0AEAB /* music.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BDD65C1A1D6589EE00A0AEAB /* music.bundle */; };
 		BDEB25141D55C0490010FFEA /* XFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25131D55C0490010FFEA /* XFBaseViewController.swift */; };
 		BDEB25161D55C3F50010FFEA /* XFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */; };
 		BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDEB25171D55C4040010FFEA /* XFVisitorView.xib */; };
@@ -162,8 +162,8 @@
 		BDD22B3E1D55A042007A86F8 /* XFDiscover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XFDiscover.storyboard; sourceTree = "<group>"; };
 		BDD22B421D55A82A007A86F8 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		BDD22B441D55B959007A86F8 /* XFDefineFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFDefineFile.swift; sourceTree = "<group>"; };
-		BDD65C121D6555D200A0AEAB /* XFComPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFComPopViewController.swift; sourceTree = "<group>"; };
-		BDD65C131D6555D200A0AEAB /* XFComPopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFComPopViewController.xib; sourceTree = "<group>"; };
+		BDD65C191D6589EE00A0AEAB /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		BDD65C1A1D6589EE00A0AEAB /* music.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = music.bundle; sourceTree = "<group>"; };
 		BDEB25131D55C0490010FFEA /* XFBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFBaseViewController.swift; sourceTree = "<group>"; };
 		BDEB25151D55C3F50010FFEA /* XFVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFVisitorView.swift; sourceTree = "<group>"; };
 		BDEB25171D55C4040010FFEA /* XFVisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XFVisitorView.xib; sourceTree = "<group>"; };
@@ -212,6 +212,7 @@
 		601C10331B91C5730EF446E8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				BDD65C1B1D6589EE00A0AEAB /* Resource */,
 				9CE6B92A890AF38E52230492 /* Pods-XFWeiboSwift.debug.xcconfig */,
 				5932ED05110588B8BC20B7D9 /* Pods-XFWeiboSwift.release.xcconfig */,
 				9C6C191535B9AA0B02FAC034 /* Pods-XFWeiboSwiftTests.debug.xcconfig */,
@@ -225,7 +226,6 @@
 		BD1EE61B1D5D9D4A008A9B0D /* Compose (发布) */ = {
 			isa = PBXGroup;
 			children = (
-				BDD65C111D65550400A0AEAB /* PopView */,
 				BD2E762A1D5EC8340096ABD6 /* PicPicker */,
 				BD1EE61C1D5D9DE8008A9B0D /* XFCompViewController.swift */,
 				BD1EE61D1D5D9DE8008A9B0D /* XFCompViewController.xib */,
@@ -471,13 +471,14 @@
 			path = Categary;
 			sourceTree = "<group>";
 		};
-		BDD65C111D65550400A0AEAB /* PopView */ = {
+		BDD65C1B1D6589EE00A0AEAB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				BDD65C121D6555D200A0AEAB /* XFComPopViewController.swift */,
-				BDD65C131D6555D200A0AEAB /* XFComPopViewController.xib */,
+				BDD65C191D6589EE00A0AEAB /* images.bundle */,
+				BDD65C1A1D6589EE00A0AEAB /* music.bundle */,
 			);
-			path = PopView;
+			name = Resource;
+			path = Pods/BHBPopView/Resource;
 			sourceTree = "<group>";
 		};
 		BDEB25101D55C0050010FFEA /* Visitor (访客) */ = {
@@ -612,9 +613,10 @@
 				BDD22B391D559FF5007A86F8 /* XFNoUse.storyboard in Resources */,
 				BDD22B341D559F09007A86F8 /* XFMsg.storyboard in Resources */,
 				BDEB25181D55C4040010FFEA /* XFVisitorView.xib in Resources */,
-				BDD65C151D6555D200A0AEAB /* XFComPopViewController.xib in Resources */,
+				BDD65C1D1D6589EE00A0AEAB /* music.bundle in Resources */,
 				BDD22B3D1D55A033007A86F8 /* Main.storyboard in Resources */,
 				BD2E76301D5ECEDB0096ABD6 /* XFPicPickerCell.xib in Resources */,
+				BDD65C1C1D6589EE00A0AEAB /* images.bundle in Resources */,
 				BD1EE61F1D5D9DE9008A9B0D /* XFCompViewController.xib in Resources */,
 				BDD22B361D559F47007A86F8 /* XFProfile.storyboard in Resources */,
 				BDD22B3F1D55A042007A86F8 /* XFDiscover.storyboard in Resources */,
@@ -809,7 +811,6 @@
 				BD54E2F91D5C3761003D79F2 /* XFUser.swift in Sources */,
 				BD3E344B1D5B01A40088B23F /* XFCommon.swift in Sources */,
 				BDADBFFB1D5B66B80064EF28 /* XFWelcomeViewController.swift in Sources */,
-				BDD65C141D6555D200A0AEAB /* XFComPopViewController.swift in Sources */,
 				BDB46AA81D549D9C00BF8829 /* XFProfileViewController.swift in Sources */,
 				BD54E2D51D5C2120003D79F2 /* XFHomeStatus.swift in Sources */,
 				BD3501581D6450DD006B94F8 /* XFShowBigPhtotAnimator.swift in Sources */,

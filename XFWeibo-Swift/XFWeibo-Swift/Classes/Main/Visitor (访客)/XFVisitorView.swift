@@ -32,17 +32,14 @@ class XFVisitorView: UIView {
     
     /// 增加动画
     func addRotationAnim() {
-        // 1. 创建动画
         let rotationAnim = CABasicAnimation(keyPath: "transform.rotation.z")
         
-        // 2. 设置动画属性
         rotationAnim.fromValue = 0
         rotationAnim.toValue = M_PI * 2
         rotationAnim.repeatCount = MAXFLOAT
         rotationAnim.duration = 8
         rotationAnim.removedOnCompletion = false
         
-        // 3. 将动画添加到 layer
         rotationView.layer.addAnimation(rotationAnim, forKey: nil)
     }
     

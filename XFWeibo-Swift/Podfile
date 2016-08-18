@@ -11,6 +11,7 @@ pod 'SVProgressHUD'
 pod 'MJRefresh'
 pod 'SnapKit', '~> 0.21.1'
 pod 'HYLabel'
+pod 'BHBPopView'
 
 
   # Pods for XFWeiboSwift
