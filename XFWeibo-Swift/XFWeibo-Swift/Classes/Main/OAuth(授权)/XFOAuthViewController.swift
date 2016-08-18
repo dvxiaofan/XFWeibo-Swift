@@ -30,7 +30,7 @@ extension XFOAuthViewController {
     private func setupNavBar() {
         title = "登录授权"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .Plain, target: self, action: "backBtnClick");
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "填充", style: .Plain, target: self, action: "fillInfoClick")
+        navigationItem.rightBarButtonItem = nil
     }
     
     private func loadOAtuhPage() {
@@ -52,12 +52,6 @@ extension XFOAuthViewController {
     /// 返回按钮
     @objc private func backBtnClick() {
          dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @objc private func fillInfoClick() {
-        let jsCode = "document.getElementById('userId').value='15307130789';document.getElementById('passwd').value='Lmz900904';"
-        
-        webView.stringByEvaluatingJavaScriptFromString(jsCode)
     }
 }
 

@@ -191,6 +191,11 @@ extension XFHomeViewCell {
             // 取出图片
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(viewModel?.picURLs.last?.absoluteString)
             // 单张图片的 layoutsize
+            
+            
+            
+            XFLog(image.size.height)
+            
             layout.itemSize = CGSize(width: image.size.width * 2, height: image.size.height * 2)
             
             return CGSize(width: image.size.width * 2, height: image.size.height * 2)

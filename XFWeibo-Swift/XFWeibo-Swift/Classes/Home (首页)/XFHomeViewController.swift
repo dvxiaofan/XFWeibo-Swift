@@ -172,6 +172,18 @@ extension XFHomeViewController {
         
         presentViewController(showBigPhotoVc, animated: true, completion: nil)
     }
+    
+    @IBAction func repostBtnClick(sender: AnyObject) {
+        XFLog("转发")
+    }
+    
+    @IBAction func commentBtnClick(sender: AnyObject) {
+        XFLog("评论")
+    }
+    
+    @IBAction func zanBtnClick(sender: AnyObject) {
+        XFLog("赞")
+    }
 }
 
 // MARK:- 请求数据

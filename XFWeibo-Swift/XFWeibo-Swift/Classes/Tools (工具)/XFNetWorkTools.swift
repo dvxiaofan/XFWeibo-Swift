@@ -66,7 +66,9 @@ extension XFNetWorkTools {
         // 发送请求
         requestData(methodType: .POST, urlString: urlString, parameters: parameters) { (result, error) -> () in
             finished(result: result as? [String : AnyObject], error: error)
-            XFLog("请求AccessToken失败: \(error)")
+            if error != nil {
+                XFLog("请求AccessToken失败: \(error)")
+            }
         }
         
     }
@@ -82,7 +84,9 @@ extension XFNetWorkTools {
         
         requestData(methodType: .GET, urlString: urlString, parameters: parameters) { (result, error) -> () in
             finished(result: result as? [String : AnyObject], error: error)
-            XFLog("请求用户数据失败: \(error)")
+            if error != nil {
+                XFLog("请求用户数据失败: \(error)")
+            }
         }
     }
 }
@@ -98,7 +102,9 @@ extension XFNetWorkTools {
             // 数据转字典
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(result: nil, error: error)
-                XFLog("请求主页数据失败: \(error)")
+                if error != nil {
+                    XFLog("请求主页数据失败: \(error)")
+                }
                 return
             }
             // 将数组数据回调给外界
@@ -119,11 +125,12 @@ extension XFNetWorkTools {
                 isSuccess(isSuccess: true)
             } else {
                 isSuccess(isSuccess: false)
-                XFLog("无图片的微博发送失败: \(error)")
+                if error != nil {
+                    XFLog("无图片的微博发送失败: \(error)")
+                }
             }
         }
     }
-    
 }
 
 // MARK:- 发送图片微博
@@ -143,7 +150,6 @@ extension XFNetWorkTools {
             }) { (_, error) -> Void in
                 XFLog("图片微博发送失败: \(error)")
         }
-        
     }
 }
 
