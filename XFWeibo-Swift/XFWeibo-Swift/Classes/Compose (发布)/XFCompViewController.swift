@@ -87,6 +87,7 @@ extension XFCompViewController {
     // 返回按钮点击事件
     @objc private func backClick() {
          dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     // 发送按钮

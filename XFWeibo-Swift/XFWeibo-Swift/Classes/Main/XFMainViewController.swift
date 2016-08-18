@@ -44,11 +44,9 @@ extension XFMainViewController {
 extension XFMainViewController {
     @objc private func composeBtnClick() {
         
-        let compVc = XFCompViewController()
-        
-        let nav = UINavigationController(rootViewController: compVc)
-        
-        presentViewController(nav, animated: true, completion: nil)
+        let comPopVc = XFComPopViewController()
+        presentViewController(comPopVc, animated: true, completion: nil)
+        //UIApplication.sharedApplication().keyWindow?.rootViewController = XFComPopViewController()
     }
 }
 
